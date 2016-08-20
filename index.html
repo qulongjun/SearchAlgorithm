@@ -42,22 +42,6 @@
             <li><a href="#">节点最大距离</a></li>
             <li><a href="#">重建二叉树</a></li>
         </ul>
-
-        <h3><i class="q-menu-three positionIicon"></i>二叉树算法</h3>
-        <ul class="ulmenu3">
-            <li><a class="selected" href="#tab1">基础问题</a></li>
-            <li><a href="#">操作环境</a></li>
-            <li><a href="#">科目问题</a></li>
-            <li><a href="#tab3">期初问题</a></li>
-            <li><a href="#tab4">期末结转类凭证问题</a></li>
-            <li><a href="#tab5">凭证问题</a></li>
-            <li><a href="#">报表</a></li>
-            <li><a href="#">数量金额计算</a></li>
-            <li><a href="#">账套信息</a></li>
-            <li><a href="#">小规模纳税人和一般纳税人</a></li>
-            <li><a href="#">打印问题</a></li>
-            <li><a href="#">固定资产问题</a></li>
-        </ul>
     </div>
 
     <div class="content">
@@ -398,7 +382,8 @@
             </div>
             <div id="tab-7" class="tab">
                 <p class="tt">递归思路</p>
-                <p><a target="_blank" href="http://blog.csdn.net/ljianhui/article/details/22338405">链接</a> 递归转换BST为双向链表:只需要将根节点左子树的最右叶子结点与根结点相连，右子树的最左叶子结点与根结点相连即可（互相）</p>
+                <p><a target="_blank" href="http://blog.csdn.net/ljianhui/article/details/22338405">链接</a>
+                    递归转换BST为双向链表:只需要将根节点左子树的最右叶子结点与根结点相连，右子树的最左叶子结点与根结点相连即可（互相）</p>
                 <p class="tt">非递归思路</p>
                 <p>非递归实现思路不太理解,待补充</p>
                 <pre class="java">
@@ -543,63 +528,500 @@
                 </pre>
 
             </div>
-            <div id="tab-9" class="tab">table9</div>
-            <div id="tab-10" class="tab">table10</div>
-            <div id="tab-11" class="tab">table11</div>
-            <div id="tab-12" class="tab">table12</div>
-        </div>
+            <div id="tab-9" class="tab">
+                <p class="tt">递归思路</p>
+                <p>判定规则:不存在左子树和右子树的节点为叶子节点,为递归退出条件.</p>
+                <p class="tt">非递归思路</p>
+                <p>思路和"求二叉树节点数"问题类似,区别在于求二叉树节点数时,只要出队列即计数器加1,求叶子节点数需要增加判断:左右子树为空,</p>
+                <pre class="java">
+	 /**
+	 * 求二叉树中叶子节点的个数（递归）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetNodeNumLeafRec(BinaryTreeNode root) {
+		if (root == null) // root不存在，返回0
+			return 0;
+		if (root.m_pLeft == null && root.m_pRight == null) { // 递归结束条件：不存在左子树和右子树
+			return 1;
+		}
+		return GetNodeNumLeafRec(root.m_pLeft)
+				+ GetNodeNumLeafRec(root.m_pRight);
+	}
 
-        <div class="menu3 menu_tab">
-            <div id="tab-3-1" class="tab">
-                <p class="tt">1. 。。。如何收费？222</p>
-                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+	/**
+	 * 求二叉树中叶子节点的个数（迭代）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetNodeNumLeaf(BinaryTreeNode root) {
+		if (root == null)
+			return 0;
+		Queue&lt;BinaryTreeNode> binaryTreeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		binaryTreeNodeQueue.add(root);
+		int leftNodes = 0;
+		while (!binaryTreeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeQueue.poll();
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pLeft);
+			}
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft == null && treeNode.m_pRight == null) {
+				leftNodes++;
+			}
+		}
+		return leftNodes;
+	}
+                </pre>
 
-                <p class="tt">2. 。。。安全吗？</p>
-                <p>
-                    在安全保障方面，我们参照并实施了多项国际及国家在信息安全领域的标准，成立了公司级安全小组，制定了详细的规章制度与考核标准，由安全监理负责监察规章制度的执行，确保客户数据的收集、储存及使用均遵守内部监控以及适用的法律及法规规定；用户数据安全方面我们采用安全性最好的独立部署模式，对每一家企业分配私有的专用服务器资源独立使用，数据单独存放，核心数据每天进行本地，本地异机与异地异机三重备份机制，解决因为极端事件给数据带来的安全隐患；在数据传输安全方面，所有用户关键及核心数据，我们全部使用SSL加密转输，杜绝了用户数据在传输过程中可能出现的窃听、篡改、伪造等行为。</p>
-
-
-                <p class="tt">3. 有。。。的流程操作视频吗？</p>
-                <p>。。。操作视频：http://kuaiji.youku.com/hall/?ykvid=XODYwMTkwOTQw</p>
-                <p>帮助文档：http://www.uu.com.cn/help/index.html</p>
-
-                <p class="tt">1. 。。。如何收费？</p>
-                <p>。。。的数据是云端多重备份存储，是自动保存的。</p>
-                <p>使用者年底也可以把总账、明细账下载到本地归档，操作步骤：点击“账簿管理”，选择某一公司账套，点击“账簿归档”，即能将所选年度的总账、明细账、数量金额明细账下载到本地用于归档。</p>
-
-                <p class="tt">1. 。。。如何收费？</p>
-                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
-
-                <p class="tt">1. 。。。如何收费？</p>
-                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
-
-                <p class="tt">1. 。。。如何收费？</p>
-                <p>。。。</p>
-
-                <p class="tt">1. 。。。如何收费？</p>
-                <p>。。。</p>
             </div>
-            <div id="tab-3-2" class="tab">table2</div>
-            <div id="tab-3-3" class="tab">table3</div>
-            <div id="tab-3-4" class="tab">
-                <p class="tt">1. 。。。</p>
-                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+            <div id="tab-10" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果两棵二叉树都为空，返回真 （2）如果两棵二叉树一棵为空，另一棵不为空，返回假.（3）如果两棵二叉树都不为空，如果对应的左子树和右子树都同构返回真，其他返回假</p>
+                <p class="tt">非递归思路</p>
+                <p>待理解,</p>
+                <pre class="java">
+     /**
+	 * 判断两棵二叉树是否相同的树(递归解法)
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isSameRec(BinaryTreeNode root1, BinaryTreeNode root2) {
+		if (root1 == null && root2 == null) {
+			return true;
+		} else if (root1 == null || root2 == null) {
+			return false;
+		}
+		if (root1.m_nValue != root2.m_nValue)
+			return false;
 
-                <p class="tt">2. 。。。安全吗？</p>
-                <p>
-                    在安全保障方面，我们参照并实施了多项国际及国家在信息安全领域的标准，成立了公司级安全小组，制定了详细的规章制度与考核标准，由安全监理负责监察规章制度的执行，确保客户数据的收集、储存及使用均遵守内部监控以及适用的法律及法规规定；用户数据安全方面我们采用安全性最好的独立部署模式，对每一家企业分配私有的专用服务器资源独立使用，数据单独存放，核心数据每天进行本地，本地异机与异地异机三重备份机制，解决因为极端事件给数据带来的安全隐患；在数据传输安全方面，所有用户关键及核心数据，我们全部使用SSL加密转输，杜绝了用户数据在传输过程中可能出现的窃听、篡改、伪造等行为。</p>
+		boolean leftSame = isSameRec(root1.m_pLeft, root2.m_pLeft);
+		boolean rightSame = isSameRec(root1.m_pRight, root2.m_pRight);
+		return leftSame && rightSame;
+	}
+
+	/**
+	 * 判断两棵二叉树是否相同的树(迭代解法)
+	 *
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isSame(BinaryTreeNode root1, BinaryTreeNode root2) {
+		if (root1 == null && root2 == null) {
+			return true;
+		} else if (root1 == null || root2 == null) {
+			return false;
+		}
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack1 = new Stack&lt;BinaryTreeNode>();
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack2 = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack1.push(root1);
+		binaryTreeNodeStack2.push(root2);
+		while (!binaryTreeNodeStack1.isEmpty()
+				&& !binaryTreeNodeStack2.isEmpty()) {
+			BinaryTreeNode treeNode1 = binaryTreeNodeStack1.pop();
+			BinaryTreeNode treeNode2 = binaryTreeNodeStack2.pop();
+			if (treeNode1 == null && treeNode2 == null) {
+				continue;
+			} else if (treeNode1 != null && treeNode2 != null
+					&& treeNode1.m_nValue == treeNode2.m_nValue) {
+				binaryTreeNodeStack1.push(treeNode1.m_pRight);
+				binaryTreeNodeStack1.push(treeNode1.m_pLeft);
+				binaryTreeNodeStack2.push(treeNode2.m_pRight);
+				binaryTreeNodeStack2.push(treeNode2.m_pLeft);
+			} else
+				return false;
+
+		}
+		return true;
+
+	}
+                </pre>
             </div>
-            <div id="tab-3-5" class="tab">table5</div>
-            <div id="tab-3-6" class="tab">table6</div>
-            <div id="tab-3-7" class="tab">table7</div>
-            <div id="tab-3-8" class="tab">table8</div>
-            <div id="tab-3-9" class="tab">table9</div>
-            <div id="tab-3-10" class="tab">table10</div>
-            <div id="tab-3-11" class="tab">table11</div>
-            <div id="tab-3-12" class="tab">table12</div>
+            <div id="tab-11" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，返回真 （2）如果二叉树不为空，如果左子树和右子树都是AVL树并且左子树和右子树高度相差不大于1，返回真，其他返回假</p>
+                <pre class="java">
+/**
+	 * 判断二叉树是不是平衡二叉树 递归解法：
+	 *
+	 * @param root
+	 * @return
+	 */
+	public boolean isAVLRec(BinaryTreeNode root) {
+		if (root == null)
+			return true;
+		// 判断当前结点左子树和右子树高度差是否大于1
+		if (Math.abs(GetDepth(root.m_pLeft) - GetDepth(root.m_pRight)) > 1) {
+			return false;
+		}
+		return isAVLRec(root.m_pLeft) && isAVLRec(root.m_pRight);
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab-12" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+/    /**
+	 * 求二叉树的镜像 递归实现
+	 *
+	 * （1）如果二叉树为空，返回空 （2）如果二叉树不为空，求左子树和右子树的镜像，然后交换左子树和右子树
+	 *
+	 * 破坏原来的树，把原来的树破坏掉
+	 *
+	 * @return
+	 */
+	public BinaryTreeNode MirrorRec(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+		BinaryTreeNode leftTreeNode = MirrorRec(root.m_pLeft);
+		BinaryTreeNode rightTreeNode = MirrorRec(root.m_pRight);
+		root.m_pLeft = rightTreeNode;
+		root.m_pRight = leftTreeNode;
+		return root;
+	}
+
+	/**
+	 * 求二叉树的镜像 递归实现
+	 *
+	 * （1）如果二叉树为空，返回空 （2）如果二叉树不为空，求左子树和右子树的镜像，然后交换左子树和右子树
+	 *
+	 * 不能破坏原来的树，返回一个新的镜像树
+	 *
+	 * @return
+	 */
+	public BinaryTreeNode MirrorCopyRec(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+
+		BinaryTreeNode leftTreeNode = MirrorRec(root.m_pLeft);
+		BinaryTreeNode rightTreeNode = MirrorRec(root.m_pRight);
+		BinaryTreeNode treeNode = new BinaryTreeNode(root.m_nValue,
+				rightTreeNode, leftTreeNode);
+		return treeNode;
+	}
+
+	/**
+	 * 判断两个树是否互相镜像 递归实现
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isMirrorRec(BinaryTreeNode root1, BinaryTreeNode root2) {
+
+		if (root1 == null && root2 == null) {
+			return true;
+		} else {
+			if (root1 == null || root2 == null)
+				return false;
+		}
+		if (root1.m_nValue != root2.m_nValue) // 判断根值是否一样
+			return false;
+
+		// 判断左右子树是否一样
+		return isMirrorRec(root1.m_pLeft, root2.m_pRight)
+				&& isMirrorRec(root1.m_pRight, root2.m_pLeft);
+	}
+
+	/**
+	 * 求二叉树的镜像 迭代实现
+	 *
+	 *
+	 * 破坏原来的树，把原来的树破坏掉
+	 *
+	 * @return
+	 */
+	public void mirror(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack.push(root);
+		while (!binaryTreeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeStack.pop();
+			BinaryTreeNode temp = treeNode.m_pLeft;
+			treeNode.m_pLeft = treeNode.m_pRight;
+			treeNode.m_pRight = temp;
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeStack.push(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeStack.push(treeNode.m_pLeft);
+			}
+		}
+	}
+
+	/**
+	 * 求二叉树的镜像 迭代实现
+	 *
+	 * 不能破坏原来的树，返回一个新的镜像树
+	 *
+	 * @param root
+	 * @return
+	 */
+	public BinaryTreeNode MirrorCopy(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		Stack&lt;BinaryTreeNode> newStack = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack.push(root);
+		BinaryTreeNode newRoot = new BinaryTreeNode(root.m_nValue);
+		newStack.push(newRoot);
+		while (!binaryTreeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeStack.pop(); // 根先出栈
+			BinaryTreeNode newTreeNode = newStack.pop();
+			if (treeNode.m_pRight != null) { // 右子树出栈
+				binaryTreeNodeStack.push(treeNode.m_pRight);
+				newTreeNode.m_pLeft = new BinaryTreeNode(
+						treeNode.m_pRight.m_nValue);
+				newStack.push(newTreeNode.m_pLeft);
+
+			}
+			if (treeNode.m_pLeft != null) {// 左子树出栈
+				binaryTreeNodeStack.push(treeNode.m_pLeft);
+				newTreeNode.m_pRight = new BinaryTreeNode(
+						treeNode.m_pLeft.m_nValue);
+				newStack.push(newTreeNode.m_pRight);
+
+			}
+		}
+		return newRoot;
+	}
+
+
+                </pre>
+
+            </div>
+            <div id="tab-13" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果两个节点分别在根节点的左子树和右子树，则返回根节点（2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>先求从根节点到两个节点的路径，然后再比较对应路径的节点就行，最后一个相同的节点也就是他们在二叉树中的最低公共祖先节点</p>
+                <pre class="java">
+/**
+	 * 求二叉树中两个节点的最低公共祖先节点 递归解法
+	 *
+	 * （1）如果两个节点分别在根节点的左子树和右子树，则返回根节点
+	 * （2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树
+	 *
+	 *
+	 * @param root
+	 * @param n1
+	 * @param n2
+	 * @return
+	 */
+	public BinaryTreeNode GetLastCommonParentRec(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (findNodeRec(root.m_pLeft, n1)) {
+			if (findNodeRec(root.m_pRight, n2)) {
+				return root;
+			} else {
+				return GetLastCommonParentRec(root.m_pLeft, n1, n2);
+			}
+		} else {
+			if (findNodeRec(root.m_pLeft, n2)) {
+				return root;
+			} else {
+				return GetLastCommonParentRec(root.m_pRight, n1, n2);
+			}
+		}
+	}
+
+	/**
+	 * 辅助方法，判断一个点是否在树里
+	 *
+	 * 若root为null或者treeNode为null，则直接返回false
+	 *
+	 * @param root
+	 * @param treeNode
+	 * @return
+	 */
+	private boolean findNodeRec(BinaryTreeNode root, BinaryTreeNode treeNode) {
+		if (root == null || treeNode == null)
+			return false;
+		if (root == treeNode) // 递归结束条件，root和treeNode相等
+			return true;
+		// 递归查找左子树中和右子树中是否有该值
+		return findNodeRec(root.m_pLeft, treeNode)
+				|| findNodeRec(root.m_pRight, treeNode);
+	}
+
+	public BinaryTreeNode GetLastCommonParentRec2(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (root == null)
+			return null;
+		if (root == n1 || root == n2) { // 用来结束递归，判断当前结点是否和n1或者和n2一样
+			return root;
+		}
+		BinaryTreeNode leftTreeNode = GetLastCommonParentRec2(root.m_pLeft, n1,
+				n2);// 从左子树中找n1或者n2结点
+		BinaryTreeNode rightTreeNode = GetLastCommonParentRec2(root.m_pRight,
+				n1, n2);// 从右子树中找N1或者N2
+		if (leftTreeNode != null && rightTreeNode != null) {
+			// 左子树和右子树各有一个，则说明公共根结点为root
+			return root;
+		}
+		if (leftTreeNode != null)// 如果右子树为空，则说明在左子树
+			return leftTreeNode;
+		return rightTreeNode;
+	}
+
+	/**
+	 * 求二叉树中两个节点的最低公共祖先节点 迭代解法
+	 *
+	 * 先求从根节点到两个节点的路径，然后再比较对应路径的节点就行，最后一个相同的节点也就是他们在二叉树中的最低公共祖先节点
+	 *
+	 * @param root
+	 * @param n1
+	 * @param n2
+	 * @return
+	 */
+	public BinaryTreeNode GetLastCommonParent(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (root == null)
+			return null;
+		ArrayList&lt;BinaryTreeNode> n1List = new ArrayList&lt;BinaryTreeNode>();
+		boolean n1Path = getNodePath(root, n1, n1List);
+		ArrayList&lt;BinaryTreeNode> n2List = new ArrayList&lt;BinaryTreeNode>();
+		boolean n2Path = getNodePath(root, n2, n2List);
+
+		BinaryTreeNode last = null;
+		if (!n1Path || !n2Path)
+			return null;
+		Iterator&lt;BinaryTreeNode> node_it1 = n1List.iterator();
+		Iterator&lt;BinaryTreeNode> node_it2 = n2List.iterator();
+		while (node_it1.hasNext() && node_it2.hasNext()) {
+			BinaryTreeNode treeNode_1 = node_it1.next();
+			BinaryTreeNode treeNode_2 = node_it2.next();
+			if (treeNode_1 == treeNode_2) {
+				last = treeNode_1;
+			} else {
+				break;
+			}
+		}
+
+		return last;
+	}
+
+     /**
+	 * 从根节点到node结点路径上所有的结点都添加到path路径中
+	 *
+	 * @param root
+	 * @param node
+	 * @param nodeList
+	 * @return
+	 */
+	private boolean getNodePath(BinaryTreeNode root, BinaryTreeNode node,
+			ArrayList&lt;BinaryTreeNode> path) {
+		if (root == null)
+			return false;
+		path.add(root); // 把这个节点加到路径中
+		if (root == node) {
+			return true;
+		}
+		boolean find = getNodePath(root.m_pLeft, node, path);// 先在左子树中找
+		if (!find) { // 如果没找到，再在右子树找
+			find = getNodePath(root.m_pRight, node, path);
+		}
+		if (!find) { // 如果实在没找到证明这个节点不在路径中，说明刚才添加进去的不是路径上的节点，删掉！
+			path.remove(root);
+		}
+		return find;
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab-14" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 求二叉树中节点的最大距离 即二叉树中相距最远的两个节点之间的距离，递归解法
+	 *
+	 * （1）如果二叉树为空，返回0，同时记录左子树和右子树的深度，都为0
+	 * （2）如果二叉树不为空，最大距离要么是左子树中的最大距离，要么是右子树中的最大距离，
+	 * 要么是左子树节点中到根节点的最大距离+右子树节点中到根节点的最大距离，同时记录左子树和右子树节点中到根节点的最大距离。
+	 *
+	 *
+	 * 计算一个二叉树的最大距离有两个情况:
+	 *
+	 * 情况A: 路径经过左子树的最深节点，通过根节点，再到右子树的最深节点。 情况B: 路径不穿过根节点，而是左子树或右子树的最大距离路径，取其大者。
+	 * 只需要计算这两个情况的路径距离，并取其大者，就是该二叉树的最大距离
+	 *
+	 * @param root
+	 * @return
+	 */
+	public Result GetMaxDistanceRec(BinaryTreeNode root) {
+		if (root == null) {
+			Result empty = new Result(0, -1); // 目的是让调用方 +1 后，把当前的不存在的
+												// (NULL)子树当成最大深度为 0
+			return empty;
+		}
+		Result lResult = GetMaxDistanceRec(root.m_pLeft);
+		Result rResult = GetMaxDistanceRec(root.m_pRight);
+		Result res = new Result();
+		res.maxDepth = Math.max(lResult.maxDepth, rResult.maxDepth) + 1; // 当前最大深度
+		// 取情况A和情况B中较大值
+		res.maxDistance = Math.max(lResult.maxDepth + rResult.maxDepth,
+				Math.max(lResult.maxDistance, rResult.maxDistance));
+		return res;
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab-15" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 由前序遍历序列和中序遍历序列重建二叉树
+	 *
+	 * @param preOrder
+	 * @param inOrder
+	 * @return
+	 */
+	public BinaryTreeNode RebuildBinaryTreeRec(List&lt;Integer> preOrder,
+			List&lt;Integer> inOrder) {
+
+		BinaryTreeNode root = null;
+		List&lt;Integer> leftPreOrder;
+		List&lt;Integer> rightPreOrder;
+		List&lt;Integer> leftInorder;
+		List&lt;Integer> rightInorder;
+		int inorderPos;
+		int preorderPos;
+		if ((preOrder.size() != 0) && (inOrder.size() != 0)) {
+			// 把preorder的第一个元素作为root
+			root = new BinaryTreeNode(preOrder.get(0));
+			// 知道root节点，所以根据root节点位置，把preorder，inorder分别划分为 root左侧和右侧 的两个子区间
+			inorderPos = inOrder.indexOf(preOrder.get(0)); // inorder序列的分割点
+			leftInorder = inOrder.subList(0, inorderPos);
+			rightInorder = inOrder.subList(inorderPos + 1, inOrder.size());
+			preorderPos = leftInorder.size(); // preorder序列的分割点
+			leftPreOrder = preOrder.subList(1, preorderPos + 1);
+			rightPreOrder = preOrder.subList(preorderPos + 1, preOrder.size());
+			root.m_pLeft = RebuildBinaryTreeRec(leftPreOrder, leftInorder); // root的左子树就是preorder和inorder的左侧区间而形成的树
+			root.m_pRight = RebuildBinaryTreeRec(rightPreOrder, rightInorder); // root的右子树就是preorder和inorder的右侧区间而形成的树
+		}
+		return root;
+	}
+
+                </pre>
+
+            </div>
         </div>
-
-
     </div>
 
 </div>
