@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瞿龙俊的算法小站</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/stylepc.css">
+    <!-- 	<link rel="stylesheet" type="text/css" href="css/shouj.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.snippet.css">
+</head>
+
+
+<body>
+<div class="container">
+    <div class="menu">
+        <h3><i class="q-menu-img positionIicon"></i>排序算法</h3>
+        <ul class="ulmenu1">
+            <li><a class="selected" href="#tab1">插入排序</a></li>
+            <li><a href="#">选择排序</a></li>
+            <li><a href="#">冒泡排序</a></li>
+            <li><a href="#">快速排序</a></li>
+            <li><a href="#">希尔排序</a></li>
+            <li><a href="#">归并排序</a></li>
+        </ul>
+
+        <h3><i class="q-menu-doit positionIicon"></i>二叉树算法</h3>
+        <ul class="ulmenu2">
+            <li><a href="#" class="selected">节点个数</a></li>
+            <li><a href="#">求深度问题</a></li>
+            <li><a href="#">前序遍历</a></li>
+            <li><a href="#">中序遍历</a></li>
+            <li><a href="#">后续遍历</a></li>
+            <li><a href="#">层次遍历</a></li>
+            <li><a href="#">变成双向链表</a></li>
+            <li><a href="#">K层节点个数</a></li>
+            <li><a href="#">叶子节点个数</a></li>
+            <li><a href="#">是否相同树</a></li>
+            <li><a href="#">是否平衡二叉树</a></li>
+            <li><a href="#">二叉树镜像</a></li>
+            <li><a href="#">最低公共祖先节点</a></li>
+            <li><a href="#">节点最大距离</a></li>
+            <li><a href="#">重建二叉树</a></li>
+        </ul>
+
+        <h3><i class="q-menu-three positionIicon"></i>二叉树算法</h3>
+        <ul class="ulmenu3">
+            <li><a class="selected" href="#tab1">基础问题</a></li>
+            <li><a href="#">操作环境</a></li>
+            <li><a href="#">科目问题</a></li>
+            <li><a href="#tab3">期初问题</a></li>
+            <li><a href="#tab4">期末结转类凭证问题</a></li>
+            <li><a href="#tab5">凭证问题</a></li>
+            <li><a href="#">报表</a></li>
+            <li><a href="#">数量金额计算</a></li>
+            <li><a href="#">账套信息</a></li>
+            <li><a href="#">小规模纳税人和一般纳税人</a></li>
+            <li><a href="#">打印问题</a></li>
+            <li><a href="#">固定资产问题</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="get-menu">
+            <a href="#">算法中心</a>
+            <span>></span>
+            <a class="A1" href="#">常见问题</a>
+        </div>
+
+        <div class="menu1 menu_tab">
+            <div id="tab1" class="tab active">
+
+            </div>
+            <div id="tab2" class="tab">
+
+            </div>
+
+            <div id="tab3" class="tab">
+
+            </div>
+
+            <div id="tab4" class="tab">
+
+
+            </div>
+
+            <div id="tab5" class="tab">
+
+
+            </div>
+
+
+            <div id="tab6" class="tab">
+
+            </div>
+
+        </div>
+
+        <div class="menu2 menu_tab">
+            <div id="tab-1" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，节点个数为0 （2）如果二叉树不为空，二叉树节点个数 = 左子树节点个数 + 右子树节点个数 + 1</p>
+                <p class="tt">非递归思路</p>
+                <p>使用Queue队列,将根节点入队,出队的时候,将出队节点的左右子树入队,使用计数器计算出队的个数.</p>
+                <pre class="java">
+	/**
+	 * 求二叉树中的节点个数（递归解法O(N)）
+	 *
+	 * @return 二叉树结点个数
+	 */
+	public int GetNodeNumRec(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		return GetNodeNumRec(root.m_pLeft) + GetNodeNumRec(root.m_pRight) + 1;
+	}
+
+
+	/**
+	 * 求二叉树中的节点个数（非递归解法O(N)）
+	 *
+	 * @return
+	 */
+	public int GetNodeNum(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		Queue&lt;BinaryTreeNode> treeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		int count = 1;
+		treeNodeQueue.add(root);
+		while (!treeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeQueue.remove();
+			if (treeNode.m_pLeft != null) {
+				treeNodeQueue.add(treeNode.m_pLeft);
+				count++;
+			}
+			if (treeNode.m_pRight != null) {
+				treeNodeQueue.add(treeNode.m_pRight);
+				count++;
+			}
+
+		}
+		return count;
+	}
+                </pre>
+
+            </div>
+
+            <div id="ta-2" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，二叉树的深度为0 （2）如果二叉树不为空，二叉树的深度 = max(左子树深度， 右子树深度) + 1</p>
+                <p class="tt">非递归思路</p>
+                <p>用一个Queue存储结点，根节点入队列，出队列节点将该结点的左右结点入队列，记录当前层的结点数和下一层的结点。使用变量保存当前深度,当前层的结点数为0的时候，表示当前层全部出队列,深度递增.</p>
+                <pre class="java">
+	 /**
+	 * 求二叉树的深度（高度） 递归解法（O(N)）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetDepthRec(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		int leftDepth = GetDepthRec(root.m_pLeft);
+		int rightDepth = GetDepthRec(root.m_pRight);
+		return Math.max(leftDepth, rightDepth) + 1;
+	}
+
+	/**
+	 * 求二叉树的深度（高度） 迭代解法（O(N)）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetDepth(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		Queue&lt;BinaryTreeNode> treeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		int depth = 0;
+		int currentLevelNode = 1;// 当前层结点数，root为1个
+		int nextLevelNode = 0;
+		treeNodeQueue.add(root);
+		while (!treeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeQueue.remove();
+			currentLevelNode--;
+			if (treeNode.m_pLeft != null) {
+				treeNodeQueue.add(treeNode.m_pLeft);
+				nextLevelNode++;
+			}
+			if (treeNode.m_pRight != null) {
+				treeNodeQueue.add(treeNode.m_pRight);
+				nextLevelNode++;
+			}
+			if (currentLevelNode == 0) {
+				depth++;
+				currentLevelNode = nextLevelNode;
+				nextLevelNode = 0;
+			}
+		}
+		return depth;
+	}
+                </pre>
+            </div>
+
+            <div id="tab-3" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，访问根节点，前序遍历左子树，前序遍历右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>使用栈进行模拟二叉树,入栈的时候，要先压入右孩子，然后压入左孩子，这样出栈的时候才是左孩子在前，右孩子在后</p>
+                <pre class="java">
+	/**
+	 * 前序遍历 递归解法
+	 *
+	 */
+	public void PreorderTraversalRec(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		System.out.println(root.m_nValue);
+		PreorderTraversalRec(root.m_pLeft);
+		PreorderTraversalRec(root.m_pRight);
+	}
+
+	/**
+	 * 前序遍历 迭代解法
+	 *
+	 * @param root
+	 */
+	public void PreorderTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> treeNodeStack = new Stack&lt;BinaryTreeNode>();
+		treeNodeStack.push(root);
+		while (!treeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeStack.pop();
+			System.out.println(treeNode.m_nValue);
+			if (treeNode.m_pRight != null) {
+				treeNodeStack.push(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft != null) {
+				treeNodeStack.push(treeNode.m_pLeft);
+			}
+		}
+
+	}
+                </pre>
+            </div>
+
+            <div id="tab-4" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，中序遍历左子树，访问根节点，中序遍历右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>使用栈进行模拟二叉树,先对所有左结点进行遍历,再从叶子结点开始,遍历右子树</p>
+                <pre class="java">
+	/**
+	 * 中序遍历 递归解法
+	 *
+	 */
+	public void InorderTraversalRec(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		InorderTraversalRec(root.m_pLeft);
+		System.out.println(root.m_nValue);
+		InorderTraversalRec(root.m_pRight);
+	}
+
+	/**
+	 * 中序遍历 迭代解法
+	 *
+	 * @param root
+	 */
+	public void InorderTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> treeNodeStack = new Stack&lt;BinaryTreeNode>();
+		BinaryTreeNode treeNode = root;
+		while (true) {
+			while (treeNode != null) {// 该循环把所有从根到叶子结点的所有左子树放到了栈中，出栈的时候就会先左叶子结点
+				treeNodeStack.push(treeNode);
+				treeNode = treeNode.m_pLeft;
+			}// 当跳出这个while循环时，treeNode为null，即为叶子结点，则说明它没有左结点，也没有右结点
+			if (treeNodeStack.isEmpty()) {
+				break;
+			}
+			treeNode = treeNodeStack.pop();// 将该结点出栈
+			System.out.println(treeNode.m_nValue);
+			treeNode = treeNode.m_pRight;// 指向右结点进行左结点遍历
+		}
+
+	}
+                </pre>
+            </div>
+
+            <div id="tab-5" class="tab">table5</div>
+            <div id="tab-6" class="tab">table6</div>
+            <div id="tab-7" class="tab">table7</div>
+            <div id="tab-8" class="tab">table8</div>
+            <div id="tab-9" class="tab">table9</div>
+            <div id="tab-10" class="tab">table10</div>
+            <div id="tab-11" class="tab">table11</div>
+            <div id="tab-12" class="tab">table12</div>
+        </div>
+
+        <div class="menu3 menu_tab">
+            <div id="tab-3-1" class="tab">
+                <p class="tt">1. 。。。如何收费？222</p>
+                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+
+                <p class="tt">2. 。。。安全吗？</p>
+                <p>
+                    在安全保障方面，我们参照并实施了多项国际及国家在信息安全领域的标准，成立了公司级安全小组，制定了详细的规章制度与考核标准，由安全监理负责监察规章制度的执行，确保客户数据的收集、储存及使用均遵守内部监控以及适用的法律及法规规定；用户数据安全方面我们采用安全性最好的独立部署模式，对每一家企业分配私有的专用服务器资源独立使用，数据单独存放，核心数据每天进行本地，本地异机与异地异机三重备份机制，解决因为极端事件给数据带来的安全隐患；在数据传输安全方面，所有用户关键及核心数据，我们全部使用SSL加密转输，杜绝了用户数据在传输过程中可能出现的窃听、篡改、伪造等行为。</p>
+
+
+                <p class="tt">3. 有。。。的流程操作视频吗？</p>
+                <p>。。。操作视频：http://kuaiji.youku.com/hall/?ykvid=XODYwMTkwOTQw</p>
+                <p>帮助文档：http://www.uu.com.cn/help/index.html</p>
+
+                <p class="tt">1. 。。。如何收费？</p>
+                <p>。。。的数据是云端多重备份存储，是自动保存的。</p>
+                <p>使用者年底也可以把总账、明细账下载到本地归档，操作步骤：点击“账簿管理”，选择某一公司账套，点击“账簿归档”，即能将所选年度的总账、明细账、数量金额明细账下载到本地用于归档。</p>
+
+                <p class="tt">1. 。。。如何收费？</p>
+                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+
+                <p class="tt">1. 。。。如何收费？</p>
+                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+
+                <p class="tt">1. 。。。如何收费？</p>
+                <p>。。。</p>
+
+                <p class="tt">1. 。。。如何收费？</p>
+                <p>。。。</p>
+            </div>
+            <div id="tab-3-2" class="tab">table2</div>
+            <div id="tab-3-3" class="tab">table3</div>
+            <div id="tab-3-4" class="tab">
+                <p class="tt">1. 。。。</p>
+                <p>。。。的个人版用户，100套账免费记，只需注册即可直接使用。。。。的代账公司版，多人操作且有服务运营管理系统，总账套数300套收费980元/年，总账套数1000套收费1980元/年。</p>
+
+                <p class="tt">2. 。。。安全吗？</p>
+                <p>
+                    在安全保障方面，我们参照并实施了多项国际及国家在信息安全领域的标准，成立了公司级安全小组，制定了详细的规章制度与考核标准，由安全监理负责监察规章制度的执行，确保客户数据的收集、储存及使用均遵守内部监控以及适用的法律及法规规定；用户数据安全方面我们采用安全性最好的独立部署模式，对每一家企业分配私有的专用服务器资源独立使用，数据单独存放，核心数据每天进行本地，本地异机与异地异机三重备份机制，解决因为极端事件给数据带来的安全隐患；在数据传输安全方面，所有用户关键及核心数据，我们全部使用SSL加密转输，杜绝了用户数据在传输过程中可能出现的窃听、篡改、伪造等行为。</p>
+            </div>
+            <div id="tab-3-5" class="tab">table5</div>
+            <div id="tab-3-6" class="tab">table6</div>
+            <div id="tab-3-7" class="tab">table7</div>
+            <div id="tab-3-8" class="tab">table8</div>
+            <div id="tab-3-9" class="tab">table9</div>
+            <div id="tab-3-10" class="tab">table10</div>
+            <div id="tab-3-11" class="tab">table11</div>
+            <div id="tab-3-12" class="tab">table12</div>
+        </div>
+
+
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.snippet.js"></script>
+<script type="text/javascript" src="js/pc.js"></script>
+</html>
