@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>瞿龙俊的算法小站</title>
+    <title>瞿龙俊的校招小站</title>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/stylepc.css">
@@ -17,8 +17,8 @@
         <h3><i class="q-menu-img positionIicon"></i>排序算法</h3>
         <ul class="ulmenu1">
             <li><a class="selected" href="#tab1">算法简介</a></li>
-			<li><a href="#">插入排序</a></li>
-			<li><a href="#">选择排序</a></li>
+            <li><a href="#">插入排序</a></li>
+            <li><a href="#">选择排序</a></li>
             <li><a href="#">冒泡排序</a></li>
             <li><a href="#">快速排序</a></li>
             <li><a href="#">希尔排序</a></li>
@@ -59,6 +59,10 @@
             <li><a href="#">第一个进环节点</a></li>
             <li><a href="#">删除指定节点</a></li>
         </ul>
+        <h3><i class="q-menu-doit positionIicon"></i>开放性问题</h3>
+        <ul class="ulmenu4">
+            <li><a href="#" class="selected">自我介绍</a></li>
+        </ul>
 
     </div>
 
@@ -71,13 +75,13 @@
 
         <div class="menu1 menu_tab">
             <div id="tab1" class="tab active">
-				<p class="tt">排序稳定性</p>
-				<p>稳定排序：基数排序、冒泡排序、直接插入排序、折半插入排序、归并排序</p>
-				<p>不稳定排序：堆排序、快速排序、希尔排序、直接选择排序</p>
-				<p>
-					<img src="img/sort_time.jpg">
-					
-				</p>
+                <p class="tt">排序稳定性</p>
+                <p>稳定排序：基数排序、冒泡排序、直接插入排序、折半插入排序、归并排序</p>
+                <p>不稳定排序：堆排序、快速排序、希尔排序、直接选择排序</p>
+                <p>
+                    <img src="img/sort_time.jpg">
+
+                </p>
             </div>
             <div id="tab2" class="tab">
 
@@ -1096,9 +1100,9 @@ class Result {
             </div>
         </div>
 
-		<div class="menu3 menu_tab">
-			<div id="tab3-1" class="tab">
-				<p class="tt">定义单链表结构</p>
+        <div class="menu3 menu_tab">
+            <div id="tab3-1" class="tab">
+                <p class="tt">定义单链表结构</p>
 				<pre class="java">
 // 链表基本类型
 class Node {
@@ -1122,10 +1126,10 @@ class Node {
 
 }
 				</pre>
-			</div>
-			<div id="tab3-2" class="tab">
-				<p class="tt">思路</p>
-				<p>使用变量count记录当前节点个数，while循环结束条件：当前结点为null</p>
+            </div>
+            <div id="tab3-2" class="tab">
+                <p class="tt">思路</p>
+                <p>使用变量count记录当前节点个数，while循环结束条件：当前结点为null</p>
                 <pre class="java">
 	/**
 	 * 求单链表中节点的个数 O(n) 使用变量count记录当前节点个数，while循环结束条件：当前结点为null
@@ -1147,10 +1151,10 @@ class Node {
 	}
                 </pre>
 
-			</div>
-			<div id="tab3-3" class="tab">
-			<p class="tt">思路</p>
-			<p>创建一个新链表，将原链表中的节点依次从新链表头部放入</p>
+            </div>
+            <div id="tab3-3" class="tab">
+                <p class="tt">思路</p>
+                <p>创建一个新链表，将原链表中的节点依次从新链表头部放入</p>
                 <pre class="java">
 	/**
 	 * 链表的翻转 基本思路为创建一个新链表，将原链表中的节点依次从新链表头部放入
@@ -1194,10 +1198,10 @@ class Node {
 	}
                 </pre>
 
-		</div>
-			<div id="tab3-4" class="tab">
-				<p class="tt">思路</p>
-				<p>使用两个指针，先让前面的指针走到正向第k个结点，这样前后两个指针的距离差是k-1，之后前后两个指针一起向前走，前面的指针走到最后一个结点时，后面指针所指结点就是倒数第k个结点</p>
+            </div>
+            <div id="tab3-4" class="tab">
+                <p class="tt">思路</p>
+                <p>使用两个指针，先让前面的指针走到正向第k个结点，这样前后两个指针的距离差是k-1，之后前后两个指针一起向前走，前面的指针走到最后一个结点时，后面指针所指结点就是倒数第k个结点</p>
                 <pre class="java">
 	/**
 	 * 查找单链表中倒数第k个结点(k>0)
@@ -1274,10 +1278,11 @@ class Node {
 	}
                 </pre>
 
-			</div>
-			<div id="tab3-5" class="tab">
-				<p class="tt">思路</p>
-				<p>设置两个指针，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步，前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O(n)</p>
+            </div>
+            <div id="tab3-5" class="tab">
+                <p class="tt">思路</p>
+                <p>
+                    设置两个指针，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步，前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O(n)</p>
                 <pre class="java">
 	/**
 	 * 查找单链表的中间结点
@@ -1306,10 +1311,10 @@ class Node {
 	}
                 </pre>
 
-			</div>
-			<div id="tab3-6" class="tab">
-				<p class="tt">思路</p>
-				<p>对于这种颠倒顺序的问题，我们应该就会想到栈，后进先出。所以，这一题要么自己使用栈，要么让系统使用栈，也就是递归。注意链表为空的情况</p>
+            </div>
+            <div id="tab3-6" class="tab">
+                <p class="tt">思路</p>
+                <p>对于这种颠倒顺序的问题，我们应该就会想到栈，后进先出。所以，这一题要么自己使用栈，要么让系统使用栈，也就是递归。注意链表为空的情况</p>
                 <pre class="java">
 	/**
 	 * 从尾到头打印单链表
@@ -1346,12 +1351,12 @@ class Node {
 
                 </pre>
 
-			</div>
-			<div id="tab3-7" class="tab">
-				<p class="tt">思路</p>
-				<p>这个类似归并排序。尤其注意两个链表都为空，和其中一个为空时的情况。只需要O（1）的空间。时间复杂度为O（max(len1, len2)）</p>
-				<P> 1）若head1或者head2为空，返回另一个<br/>
-					2）比较head1和head2的值，若head1大，则head1被加入新链表，然后比较head1的next和head2大小，反之亦然。</P>
+            </div>
+            <div id="tab3-7" class="tab">
+                <p class="tt">思路</p>
+                <p>这个类似归并排序。尤其注意两个链表都为空，和其中一个为空时的情况。只需要O（1）的空间。时间复杂度为O（max(len1, len2)）</p>
+                <P> 1）若head1或者head2为空，返回另一个<br/>
+                    2）比较head1和head2的值，若head1大，则head1被加入新链表，然后比较head1的next和head2大小，反之亦然。</P>
                 <pre class="java">
 	/**
 	 * 已知两个单链表pHead1 和pHead2 各自有序，把它们合并成一个链表依然有序
@@ -1432,10 +1437,11 @@ class Node {
 
                 </pre>
 
-			</div>
-			<div id="tab3-8" class="tab">
-				<p class="tt">思路</p>
-				<p> 这里也是用到两个指针。如果一个链表中有环，也就是说用一个指针去遍历，是永远走不到头的。因此，我们可以用两个指针去遍历，一个指针一次走两步，一个指针一次走一步，如果有环，两个指针肯定会在环中相遇。时间复杂度为O（n）</p>
+            </div>
+            <div id="tab3-8" class="tab">
+                <p class="tt">思路</p>
+                <p>
+                    这里也是用到两个指针。如果一个链表中有环，也就是说用一个指针去遍历，是永远走不到头的。因此，我们可以用两个指针去遍历，一个指针一次走两步，一个指针一次走一步，如果有环，两个指针肯定会在环中相遇。时间复杂度为O（n）</p>
                 <pre class="java">
 	/**
 	 * 判断一个单链表中是否有环
@@ -1464,10 +1470,11 @@ class Node {
 
                 </pre>
 
-			</div>
-			<div id="tab3-9" class="tab">
-				<p class="tt">思路</p>
-				<p> 如果两个链表相交于某一节点，那么在这个相交节点之后的所有节点都是两个链表所共有的。 也就是说，如果两个链表相交，那么最后一个节点肯定是共有的先遍历第一个链表，记住最后一个节点，然后遍历第二个链表， 到最后一个节点时和第一个链表的最后一个节点做比较，如果相同，则相交，否则不相交。时间复杂度为O(len1+len2)，因为只需要一个额外指针保存最后一个节点地址， 空间复杂度为O(1)</p>
+            </div>
+            <div id="tab3-9" class="tab">
+                <p class="tt">思路</p>
+                <p> 如果两个链表相交于某一节点，那么在这个相交节点之后的所有节点都是两个链表所共有的。 也就是说，如果两个链表相交，那么最后一个节点肯定是共有的先遍历第一个链表，记住最后一个节点，然后遍历第二个链表，
+                    到最后一个节点时和第一个链表的最后一个节点做比较，如果相同，则相交，否则不相交。时间复杂度为O(len1+len2)，因为只需要一个额外指针保存最后一个节点地址， 空间复杂度为O(1)</p>
                 <pre class="java">
 	/**
 	 * 判断两个单链表是否相交
@@ -1497,10 +1504,10 @@ class Node {
 
                 </pre>
 
-			</div>
-			<div id="tab3-10" class="tab">
-				<p class="tt">思路</p>
-				<p>见注释</p>
+            </div>
+            <div id="tab3-10" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
                 <pre class="java">
 	/**
 	 * 求两个单链表相交的第一个节点
@@ -1561,10 +1568,10 @@ class Node {
 
                 </pre>
 
-			</div>
-			<div id="tab3-11" class="tab">
-				<p class="tt">思路</p>
-				<p>见注释</p>
+            </div>
+            <div id="tab3-11" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
                 <pre class="java">
 	/**
 	 * 求进入环中的第一个节点 用快慢指针做
@@ -1598,10 +1605,10 @@ class Node {
 	}
                 </pre>
 
-			</div>
-			<div id="tab3-12" class="tab">
-				<p class="tt">思路</p>
-				<p>见注释</p>
+            </div>
+            <div id="tab3-12" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
                 <pre class="java">
 	/**
 	 * 给出一单链表头指针head和一节点指针toBeDeleted，O(1)时间复杂度删除节点tBeDeleted
@@ -1635,11 +1642,23 @@ class Node {
 	}
                 </pre>
 
-			</div>
-			</div>
-		</div>
+            </div>
+        </div>
 
+        <div class="menu4 menu_tab">
+            <div id="tab4-1" class="tab active">
+                <p class="tt">自我介绍</p>
+                <p>
+                    面试官你好,我是瞿龙俊,来自江苏常州,是江苏大学2017届的硕士研究生,专业是计算机技术,目前我在上海意派科技有限公司担任前端研发工程师职位.
+					实习期间为公司开发了一款在线云文档编辑器,我主要负责前端功能模块化开发,实现文本编辑和组件管理功能.除此之外,我还为公司开发了一套可视化
+					数据库的前后端通信SDK.工作之余自己也会写一些JS的插件练手,现在应聘贵公司前端开发岗,希望能得到这个宝贵的机会,谢谢!
+                </p>
+            </div>
+
+        </div>
     </div>
+
+</div>
 
 </div>
 </body>
