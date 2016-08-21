@@ -16,8 +16,9 @@
     <div class="menu">
         <h3><i class="q-menu-img positionIicon"></i>排序算法</h3>
         <ul class="ulmenu1">
-            <li><a class="selected" href="#tab1">插入排序</a></li>
-            <li><a href="#">选择排序</a></li>
+            <li><a class="selected" href="#tab1">算法简介</a></li>
+			<li><a href="#">插入排序</a></li>
+			<li><a href="#">选择排序</a></li>
             <li><a href="#">冒泡排序</a></li>
             <li><a href="#">快速排序</a></li>
             <li><a href="#">希尔排序</a></li>
@@ -70,7 +71,13 @@
 
         <div class="menu1 menu_tab">
             <div id="tab1" class="tab active">
-
+				<p class="tt">排序稳定性</p>
+				<p>稳定排序：基数排序、冒泡排序、直接插入排序、折半插入排序、归并排序</p>
+				<p>不稳定排序：堆排序、快速排序、希尔排序、直接选择排序</p>
+				<p>
+					<img src="img/sort_time.jpg">
+					
+				</p>
             </div>
             <div id="tab2" class="tab">
 
@@ -98,7 +105,7 @@
         </div>
 
         <div class="menu2 menu_tab">
-            <div id="tab-1" class="tab">
+            <div id="tab2-1" class="tab">
                 <p class="tt">定义二叉树结构</p>
 				<pre class="java">
 /**
@@ -147,7 +154,7 @@ class Result {
 }
 				</pre>
             </div>
-            <div id="tab-2" class="tab">
+            <div id="tab2-2" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，节点个数为0 （2）如果二叉树不为空，二叉树节点个数 = 左子树节点个数 + 右子树节点个数 + 1</p>
                 <p class="tt">非递归思路</p>
@@ -196,7 +203,7 @@ class Result {
 
             </div>
 
-            <div id="ta-3" class="tab">
+            <div id="tab2-3" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，二叉树的深度为0 （2）如果二叉树不为空，二叉树的深度 = max(左子树深度， 右子树深度) + 1</p>
                 <p class="tt">非递归思路</p>
@@ -254,7 +261,7 @@ class Result {
                 </pre>
             </div>
 
-            <div id="tab-4" class="tab">
+            <div id="tab2-4" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，访问根节点，前序遍历左子树，前序遍历右子树</p>
                 <p class="tt">非递归思路</p>
@@ -297,7 +304,7 @@ class Result {
                 </pre>
             </div>
 
-            <div id="tab-5" class="tab">
+            <div id="tab2-5" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，中序遍历左子树，访问根节点，中序遍历右子树</p>
                 <p class="tt">非递归思路</p>
@@ -342,7 +349,7 @@ class Result {
                 </pre>
             </div>
 
-            <div id="tab-6" class="tab">
+            <div id="tab2-6" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，后序遍历左子树，后序遍历右子树，访问根节点</p>
                 <p class="tt">非递归思路</p>
@@ -398,7 +405,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-7" class="tab">
+            <div id="tab2-7" class="tab">
                 <p class="tt">递归思路</p>
                 <p>【很少出现】用一个大的ArrayList，里面包含了每一层的ArrayList。 大的ArrayList的size和level有关系</p>
                 <p class="tt">非递归思路</p>
@@ -446,7 +453,7 @@ class Result {
 
 
             </div>
-            <div id="tab-8" class="tab">
+            <div id="tab2-8" class="tab">
                 <p class="tt">递归思路</p>
                 <p><a target="_blank" href="http://blog.csdn.net/ljianhui/article/details/22338405">链接</a>
                     递归转换BST为双向链表:只需要将根节点左子树的最右叶子结点与根结点相连，右子树的最左叶子结点与根结点相连即可（互相）</p>
@@ -532,7 +539,7 @@ class Result {
 	}
                 </pre>
             </div>
-            <div id="tab-9" class="tab">
+            <div id="tab2-9" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空或者k<1返回0 （2）如果二叉树不为空并且k==1，返回1.（3）如果二叉树不为空且k>1，返回root左子树中k-1层的节点个数与root右子树k-1层节点个数之和</p>
                 <p class="tt">非递归思路</p>
@@ -594,7 +601,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-10" class="tab">
+            <div id="tab2-10" class="tab">
                 <p class="tt">递归思路</p>
                 <p>判定规则:不存在左子树和右子树的节点为叶子节点,为递归退出条件.</p>
                 <p class="tt">非递归思路</p>
@@ -645,7 +652,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-11" class="tab">
+            <div id="tab2-11" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果两棵二叉树都为空，返回真 （2）如果两棵二叉树一棵为空，另一棵不为空，返回假.（3）如果两棵二叉树都不为空，如果对应的左子树和右子树都同构返回真，其他返回假</p>
                 <p class="tt">非递归思路</p>
@@ -711,7 +718,7 @@ class Result {
 	}
                 </pre>
             </div>
-            <div id="tab-12" class="tab">
+            <div id="tab2-12" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果二叉树为空，返回真 （2）如果二叉树不为空，如果左子树和右子树都是AVL树并且左子树和右子树高度相差不大于1，返回真，其他返回假</p>
                 <pre class="java">
@@ -734,7 +741,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-13" class="tab">
+            <div id="tab2-13" class="tab">
                 <p class="tt">递归思路</p>
                 <p>见注释</p>
                 <pre class="java">
@@ -868,7 +875,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-14" class="tab">
+            <div id="tab2-14" class="tab">
                 <p class="tt">递归思路</p>
                 <p>（1）如果两个节点分别在根节点的左子树和右子树，则返回根节点（2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树</p>
                 <p class="tt">非递归思路</p>
@@ -1008,7 +1015,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-15" class="tab">
+            <div id="tab2-15" class="tab">
                 <p class="tt">递归思路</p>
                 <p>见注释</p>
                 <pre class="java">
@@ -1047,7 +1054,7 @@ class Result {
                 </pre>
 
             </div>
-            <div id="tab-16" class="tab">
+            <div id="tab2-16" class="tab">
                 <p class="tt">递归思路</p>
                 <p>见注释</p>
                 <pre class="java">
@@ -1090,7 +1097,7 @@ class Result {
         </div>
 
 		<div class="menu3 menu_tab">
-			<div id="tab3-1" class="tab active">
+			<div id="tab3-1" class="tab">
 				<p class="tt">定义单链表结构</p>
 				<pre class="java">
 // 链表基本类型
