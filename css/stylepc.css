@@ -170,7 +170,74 @@ body{
 	}
 
 	.container .content .menu3 .tab .tt{
-		font-size: 13px;
+		font-size: 18px;
 		font-weight: bold;
 
 	}
+/*第四个菜单下的文档内容*/
+.container .content .menu4 .tab {
+	display: none;
+}
+
+.container .content .menu4 .active{
+	display: block;
+}
+
+.container .content .menu4 .tab p{
+	font-size: 14px;
+	line-height: 20px;
+	color: rgba(0,0,0,0.8);
+	word-break:break-all;
+}
+
+.container .content .menu4 .tab .tt{
+	font-size: 18px;
+	font-weight: bold;
+
+}
+/*第五个菜单下的文档内容*/
+.container .content .menu5 .tab {
+	display: none;
+}
+
+.container .content .menu5 .active{
+	display: block;
+}
+
+.container .content .menu5 .tab p{
+	font-size: 14px;
+	line-height: 20px;
+	color: rgba(0,0,0,0.8);
+	word-break:break-all;
+}
+
+.container .content .menu5 .tab .tt{
+	font-size: 18px;
+	font-weight: bold;
+
+}
+/*第六个菜单下的文档内容*/
+.container .content .menu6 .tab {
+	display: none;
+}
+
+.container .content .menu6 .active{
+	display: block;
+}
+
+.container .content .menu6 .tab p{
+	font-size: 14px;
+	line-height: 20px;
+	color: rgba(0,0,0,0.8);
+	word-break:break-all;
+}
+
+.container .content .menu6 .tab .tt{
+	font-size: 18px;
+	font-weight: bold;
+
+}
+
+.pading-2{
+	padding-bottom: 2em;
+}
