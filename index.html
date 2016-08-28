@@ -17,8 +17,9 @@
         <h3><i class="q-menu-img positionIicon"></i>排序算法</h3>
         <ul class="ulmenu1">
             <li><a class="selected" href="#tab1">算法简介</a></li>
-            <li><a href="#">插入排序</a></li>
-            <li><a href="#">选择排序</a></li>
+            <li><a href="#">直接插入排序（稳）</a></li>
+            <li><a href="#">二分插入排序（稳）</a></li>
+            <li><a href="#">希尔排序（稳）</a></li>
             <li><a href="#">冒泡排序</a></li>
             <li><a href="#">快速排序</a></li>
             <li><a href="#">希尔排序</a></li>
@@ -96,11 +97,58 @@
                 </p>
             </div>
             <div id="tab2" class="tab">
-
+				<p class="tt">排序思路</p>
+                <p>基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。</p>
+                <p>　文件初态不同时，直接插入排序所耗费的时间有很大差异。若文件初态为正序，则每个待插入的记录只需要比较一次就能够找到合适的位置插入，故算法的时间复杂度为O(n)，这时最好的情况。若初态为反序，则第i个待插入记录需要比较i+1次才能找到合适位置插入，故时间复杂度为O(n2)，这时最坏的情况。</p>
+                <p>直接插入排序的平均时间复杂度为O(n2)。</p>
+                <pre class="java">
+	public static void InsertSort(int[] a) {
+		// 遍历进行排序
+		for (int i = 1; i < a.length; i++) {
+			int temp = a[i];
+			int j;
+			for (j = i - 1; j >= 0; j--) {
+				if (a[j] > temp) {
+					a[j + 1] = a[j];
+				} else {
+					break;
+				}
+			}
+			a[j+1] = temp;
+		}
+	}
+                </pre>
             </div>
 
             <div id="tab3" class="tab">
+				<p class="tt">排序思路</p>
+                <p>基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。</p>
+                <p>　　二分插入排序的比较次数与待排序记录的初始状态无关，仅依赖于记录的个数。当n较大时，比直接插入排序的最大比较次数少得多。但大于直接插入排序的最小比较次数。算法的移动次数与直接插入排序算法的相同，最坏的情况为n2/2，最好的情况为n，平均移动次数为O(n2)。</p>
+                <pre class="java">
+	public static void SelfSort(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			int temp = a[i];
+			int left = 0;
+			int right = i - 1;
+			int mid = 0;
+			while (left <= right) {
+				mid = (left + right) / 2;
+				if (temp < a[mid]) {
+					right = mid - 1;
+				} else {
+					left = mid + 1;
+				}
+			}
+			for (int j = i - 1; j >= left; j--) {
+				a[j + 1] = a[j];
+			}
+			if (left != i) {
+				a[left] = temp;
+			}
+		}
 
+	}
+                </pre>
             </div>
 
             <div id="tab4" class="tab">
