@@ -122,6 +122,186 @@
 
 
                 </p>
+                <pre>
+		var array = [ 1, 5, 9, 3, 0, 2, 6, 7, 7, 3, 4 ];
+		var Sorter = {
+			//冒泡排序 时间复杂度：O(N^2)
+			bubbleSort : function(array) {
+				for ( var i = 0; i < array.length - 1; i++) {
+					for ( var j = i + 1; j < array.length; j++) {
+						if (array[i] > array[j]) {
+							var temp = array[i];
+							array[i] = array[j];
+							array[j] = temp;
+						}
+					}
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//直接插入排序，时间复杂度:O(N^2)
+			insertSort : function(array) {
+				var temp;
+				for ( var i = 1; i < array.length; i++) {
+					var temp = array[i];
+					for ( var j = i; j > 0 && temp < array[j - 1]; j--) {
+						array[j] = array[j - 1];
+					}
+					array[j] = temp
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//选择排序
+			selectSort : function(array) {
+				for ( var i = 0; i < array.length; i++) {
+					min = i;
+					for ( var j = i + 1; j < array.length; j++) {
+						if (array[min] > array[j]) {
+							min = j;
+						}
+					}
+					if (min != i) {
+						var temp = array[i];
+						array[i] = array[min];
+						array[min] = temp;
+					}
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//快速排序 O（NlogN）
+			QuickSort : function(array) {
+				if (array.length <= 1)
+					return array;
+				var pointIndex = Math.floor(array.length / 2);
+				var pointValue = array.splice(pointIndex, 1)[0];
+				var left = [];
+				var right = [];
+				for ( var i = 0; i < array.length; i++) {
+					if (array[i] < pointValue) {
+						left.push(array[i]);
+					} else {
+						right.push(array[i]);
+					}
+				}
+				return Sorter.QuickSort(left).concat([ pointValue ],
+						Sorter.QuickSort(right));
+			},
+			//归并排序
+			//source源数组
+			//dest目标数组
+			//s起始下标
+			//t目标下标
+			mSort : function(source, dest, s, t) {
+				var m; //取中间值
+				var dest2 = new Array();
+				if (s == t) {
+					dest[s] = source[s];
+
+				} else {
+					m = Math.floor((s + t) / 2);
+					Sorter.mSort(source, dest2, s, m);
+					Sorter.mSort(source, dest2, m + 1, t);
+					merge(dest2, dest, s, m, t);
+					/* 输出结果 */
+
+					/* 输出结果结束 */
+				}
+				//将两个数组按照从小到大的顺序融合
+				//source原数组
+				//dest排序后的数组
+				//s第一个下标
+				//m第二个数组下标
+				//总长度
+				function merge(source, dest, s, m, n) {
+					for ( var j = m + 1, k = s; j <= n && s <= m; k++) {
+						if (source[s] < source[j]) {
+							dest[k] = source[s++];
+						} else {
+							dest[k] = source[j++];
+						}
+					}
+
+					//将剩余排不完的有序数组加入到dest的末端
+					if (s <= m) {
+						for ( var l = 0; l <= m - s; l++) {
+							dest[k + l] = source[s + l];
+						}
+					}
+					if (j <= n) {
+						for ( var l = 0; l <= n - j; l++) {
+							dest[k + l] = source[j + l];
+						}
+
+					}
+				}
+			},
+			//希尔排序
+			shallSort : function(array) {
+				var increment = array.length;
+				var i
+				var temp; //暂存
+				var count = 0;
+				do {
+					increment = Math.floor(increment / 3) + 1;
+					for (i = increment; i < array.length; i++) {
+						if (array[i] < array[i - increment]) {
+							temp = array[i];
+							for ( var j = i - increment; j > 0
+									&& temp < array[j]; j -= increment) {
+
+								array[j + increment] = array[j];
+
+							}
+							array[j + increment] = temp;
+							/* 输出结果 */
+							count++;
+							console.log("第" + count + "次排序:" + array);
+							/* 输出结果结束 */
+						}
+					}
+				} while (increment > 1)
+			},
+
+			//堆排序
+			heapSort : function() {
+				var temp;
+				var i;
+				for (i = Math.floor(array.length / 2); i >= 0; i--) {
+					heapAdjust(array, i, array.length - 1); //将数组array构建成一个大顶堆
+				}
+				for (i = array.length - 1; i >= 0; i--) {
+					/*把根节点交换出去*/
+					temp = array[i];
+					array[i] = array[0];
+					array[0] = temp;
+
+					/*余下的数组继续构建成大顶堆*/
+					heapAdjust(array, 0, i - 1);
+					/* 输出结果 */
+					console.log("第" + (array.length - i) + "次排序:" + array);
+					/* 输出结果结束 */
+				}
+				function heapAdjust(array, start, max) {
+					var temp, j;
+					temp = array[start];//temp是根节点的值
+					for (j = 2 * start; j < max; j *= 2) {
+						if (j < max && array[j] < array[j + 1]) { //取得较大孩子的下标
+							++j;
+
+						}
+						if (temp >= array[j])
+							break;
+						array[start] = array[j];
+						start = j;
+					}
+					array[start] = temp;
+
+				}
+			}
+		}
+                </pre>
             </div>
             <div id="tab2" class="tab">
                 <p class="tt">排序思路</p>
