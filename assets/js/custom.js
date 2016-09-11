@@ -8,7 +8,6 @@ require([
         type: "GET",
         url: "/assets/json/leftPanel.json",
         success: function (data) {
-            console.log(render(data));
             $('#leftPanel').html(render(data));
             require(["amazeui"]);
             $('.item_click').on("click", function (event) {
