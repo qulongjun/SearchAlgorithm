@@ -3577,7 +3577,7 @@
         <div class="am-modal-hd">数据格式</div>
         <div class="am-modal-bd">
             <!--<input type="text" class="am-modal-prompt-input">-->
-            <textarea class="am-modal-prompt-input"  rows="10"  id="data-show" placeholder="输入个人简介"></textarea>
+            <textarea class="am-modal-prompt-input" rows="10" id="data-show" placeholder="输入个人简介"></textarea>
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -3611,13 +3611,18 @@
         $('#create').on("click", function () {
             var href = $('#self_href').val(), title = $('#title').val(), icon = $('#list_icon').val(), content = encodeURI(testEditor.getHTML());
             data.href = href;
-            data.icon = icon;
+            if (icon != "") {
+                data.icon = icon;
+            }
+            if ($('#doc-select-1 option:checked').value == "top") {
+                data.target = guid();
+            }
             data.title = title;
             data.content = content;
             $('#data-show').val(JSON.stringify(data));
             $('#data-prompt').modal({
                 relatedTarget: this,
-                onConfirm: function(e) {
+                onConfirm: function (e) {
                     alert("完成");
                 }
             });
