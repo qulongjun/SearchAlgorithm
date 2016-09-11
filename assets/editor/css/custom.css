@@ -1,0 +1,10 @@
+.icon_select label{
+    /*margin: 0 10px;*/
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-break:keep-all;
+}
+.icon_select label{
+    color: #666;
+}
