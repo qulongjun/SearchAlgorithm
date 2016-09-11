@@ -1,0 +1,2346 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>瞿龙俊的校招小站</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/stylepc.css">
+    <!-- 	<link rel="stylesheet" type="text/css" href="css/shouj.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.snippet.css">
+</head>
+
+
+<body>
+<div class="container">
+    <div class="menu">
+        <h3><i class="q-menu-img positionIicon"></i>排序算法</h3>
+        <ul class="ulmenu1">
+            <li><a class="selected" href="#tab1">算法简介</a></li>
+            <li><a href="#">直接插入排序（稳）</a></li>
+            <li><a href="#">二分插入排序（稳）</a></li>
+            <li><a href="#">希尔排序（不稳）</a></li>
+            <li><a href="#">简单选择排序（不稳）</a></li>
+            <li><a href="#">堆排序（不稳）</a></li>
+            <li><a href="#">冒泡排序(稳)</a></li>
+            <li><a href="#">快速排序(不稳)</a></li>
+            <li><a href="#">归并排序(稳)</a></li>
+            <li><a href="#">基数排序(稳)</a></li>
+        </ul>
+
+        <h3><i class="q-menu-doit positionIicon"></i>二叉树算法</h3>
+        <ul class="ulmenu2">
+            <li><a href="#" class="selected">基本结构</a></li>
+            <li><a href="#">节点个数</a></li>
+            <li><a href="#">求深度问题</a></li>
+            <li><a href="#">前序遍历</a></li>
+            <li><a href="#">中序遍历</a></li>
+            <li><a href="#">后序遍历</a></li>
+            <li><a href="#">层次遍历</a></li>
+            <li><a href="#">变成双向链表</a></li>
+            <li><a href="#">K层节点个数</a></li>
+            <li><a href="#">叶子节点个数</a></li>
+            <li><a href="#">是否相同树</a></li>
+            <li><a href="#">是否平衡二叉树</a></li>
+            <li><a href="#">二叉树镜像</a></li>
+            <li><a href="#">最低公共祖先节点</a></li>
+            <li><a href="#">节点最大距离</a></li>
+            <li><a href="#">重建二叉树</a></li>
+        </ul>
+        <h3><i class="q-menu-doit positionIicon"></i>单链表算法</h3>
+        <ul class="ulmenu3">
+            <li><a href="#" class="selected">基本结构</a></li>
+            <li><a href="#">节点个数</a></li>
+            <li><a href="#">反转单链表</a></li>
+            <li><a href="#">倒数第k个节点</a></li>
+            <li><a href="#">中间节点</a></li>
+            <li><a href="#">反向打印</a></li>
+            <li><a href="#">两个有序合并</a></li>
+            <li><a href="#">判断有环</a></li>
+            <li><a href="#">是否相交</a></li>
+            <li><a href="#">第一个相交节点</a></li>
+            <li><a href="#">第一个进环节点</a></li>
+            <li><a href="#">删除指定节点</a></li>
+        </ul>
+        <h3><i class="q-menu-doit positionIicon"></i>开放性问题</h3>
+        <ul class="ulmenu4">
+            <li><a href="#">自我介绍</a></li>
+            <li><a href="#">项目介绍</a></li>
+            <li><a href="#">如何看待前端</a></li>
+            <li><a href="#">如何学习前端</a></li>
+            <li><a href="#">未来规划</a></li>
+        </ul>
+        <h3><i class="q-menu-doit positionIicon"></i>交互问题</h3>
+        <ul class="ulmenu5">
+            <li><a href="#" class="selected">解决跨域</a></li>
+        </ul>
+        <h3><i class="q-menu-doit positionIicon"></i>CSS问题</h3>
+        <ul class="ulmenu6">
+            <li><a href="#" class="selected">Position问题</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+        <div class="get-menu">
+            <a href="#">算法中心</a>
+            <span>></span>
+            <a class="A1" href="#">常见问题</a>
+        </div>
+
+        <div class="menu1 menu_tab">
+            <div id="tab1" class="tab active">
+                <p class="tt">排序稳定性</p>
+                <p>稳定排序：基数排序、冒泡排序、直接插入排序、折半插入排序、归并排序</p>
+                <p>不稳定排序：堆排序、快速排序、希尔排序、直接选择排序</p>
+                <p>　O(n^2):直接插入排序，简单选择排序，冒泡排序。</p>
+                <p>　O(nlogn):快速排序，归并排序，希尔排序，堆排序。</p>
+                <p>
+                    <img src="img/sort_time.jpg">
+
+                </p>
+                <p class="tt">
+                    　　1.数据规模较小<br/>
+
+                    　　（1）待排序列基本序的情况下，可以选择直接插入排序；<br/>
+
+                    　　（2）对稳定性不作要求宜用简单选择排序，对稳定性有要求宜用插入或冒泡<br/>
+
+                    　　2.数据规模不是很大<br/>
+
+                    　　（1）完全可以用内存空间，序列杂乱无序，对稳定性没有要求，快速排序，此时要付出log（N）的额外空间。<br/>
+
+                    　　（2）序列本身可能有序，对稳定性有要求，空间允许下，宜用归并排序<br/>
+
+                    　　3.数据规模很大<br/>
+
+                    　　（1）对稳定性有求，则可考虑归并排序。<br/>
+
+                    　　（2）对稳定性没要求，宜用堆排序<br/>
+
+                    　　4.序列初始基本有序（正序），宜用直接插入，冒泡
+
+
+                </p>
+                <pre>
+		var array = [ 1, 5, 9, 3, 0, 2, 6, 7, 7, 3, 4 ];
+		var Sorter = {
+			//冒泡排序 时间复杂度：O(N^2)
+			bubbleSort : function(array) {
+				for ( var i = 0; i < array.length - 1; i++) {
+					for ( var j = i + 1; j < array.length; j++) {
+						if (array[i] > array[j]) {
+							var temp = array[i];
+							array[i] = array[j];
+							array[j] = temp;
+						}
+					}
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//直接插入排序，时间复杂度:O(N^2)
+			insertSort : function(array) {
+				var temp;
+				for ( var i = 1; i < array.length; i++) {
+					var temp = array[i];
+					for ( var j = i; j > 0 && temp < array[j - 1]; j--) {
+						array[j] = array[j - 1];
+					}
+					array[j] = temp
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//选择排序
+			selectSort : function(array) {
+				for ( var i = 0; i < array.length; i++) {
+					min = i;
+					for ( var j = i + 1; j < array.length; j++) {
+						if (array[min] > array[j]) {
+							min = j;
+						}
+					}
+					if (min != i) {
+						var temp = array[i];
+						array[i] = array[min];
+						array[min] = temp;
+					}
+					var m = i + 1;
+					console.log("第" + m + "次排序:" + array);
+				}
+			},
+			//快速排序 O（NlogN）
+			QuickSort : function(array) {
+				if (array.length <= 1)
+					return array;
+				var pointIndex = Math.floor(array.length / 2);
+				var pointValue = array.splice(pointIndex, 1)[0];
+				var left = [];
+				var right = [];
+				for ( var i = 0; i < array.length; i++) {
+					if (array[i] < pointValue) {
+						left.push(array[i]);
+					} else {
+						right.push(array[i]);
+					}
+				}
+				return Sorter.QuickSort(left).concat([ pointValue ],
+						Sorter.QuickSort(right));
+			},
+			//归并排序
+			//source源数组
+			//dest目标数组
+			//s起始下标
+			//t目标下标
+			mSort : function(source, dest, s, t) {
+				var m; //取中间值
+				var dest2 = new Array();
+				if (s == t) {
+					dest[s] = source[s];
+
+				} else {
+					m = Math.floor((s + t) / 2);
+					Sorter.mSort(source, dest2, s, m);
+					Sorter.mSort(source, dest2, m + 1, t);
+					merge(dest2, dest, s, m, t);
+					/* 输出结果 */
+
+					/* 输出结果结束 */
+				}
+				//将两个数组按照从小到大的顺序融合
+				//source原数组
+				//dest排序后的数组
+				//s第一个下标
+				//m第二个数组下标
+				//总长度
+				function merge(source, dest, s, m, n) {
+					for ( var j = m + 1, k = s; j <= n && s <= m; k++) {
+						if (source[s] < source[j]) {
+							dest[k] = source[s++];
+						} else {
+							dest[k] = source[j++];
+						}
+					}
+
+					//将剩余排不完的有序数组加入到dest的末端
+					if (s <= m) {
+						for ( var l = 0; l <= m - s; l++) {
+							dest[k + l] = source[s + l];
+						}
+					}
+					if (j <= n) {
+						for ( var l = 0; l <= n - j; l++) {
+							dest[k + l] = source[j + l];
+						}
+
+					}
+				}
+			},
+			//希尔排序
+			shallSort : function(array) {
+				var increment = array.length;
+				var i
+				var temp; //暂存
+				var count = 0;
+				do {
+					increment = Math.floor(increment / 3) + 1;
+					for (i = increment; i < array.length; i++) {
+						if (array[i] < array[i - increment]) {
+							temp = array[i];
+							for ( var j = i - increment; j > 0
+									&& temp < array[j]; j -= increment) {
+
+								array[j + increment] = array[j];
+
+							}
+							array[j + increment] = temp;
+							/* 输出结果 */
+							count++;
+							console.log("第" + count + "次排序:" + array);
+							/* 输出结果结束 */
+						}
+					}
+				} while (increment > 1)
+			},
+
+			//堆排序
+			heapSort : function() {
+				var temp;
+				var i;
+				for (i = Math.floor(array.length / 2); i >= 0; i--) {
+					heapAdjust(array, i, array.length - 1); //将数组array构建成一个大顶堆
+				}
+				for (i = array.length - 1; i >= 0; i--) {
+					/*把根节点交换出去*/
+					temp = array[i];
+					array[i] = array[0];
+					array[0] = temp;
+
+					/*余下的数组继续构建成大顶堆*/
+					heapAdjust(array, 0, i - 1);
+					/* 输出结果 */
+					console.log("第" + (array.length - i) + "次排序:" + array);
+					/* 输出结果结束 */
+				}
+				function heapAdjust(array, start, max) {
+					var temp, j;
+					temp = array[start];//temp是根节点的值
+					for (j = 2 * start; j < max; j *= 2) {
+						if (j < max && array[j] < array[j + 1]) { //取得较大孩子的下标
+							++j;
+
+						}
+						if (temp >= array[j])
+							break;
+						array[start] = array[j];
+						start = j;
+					}
+					array[start] = temp;
+
+				}
+			}
+		}
+                </pre>
+            </div>
+            <div id="tab2" class="tab">
+                <p class="tt">排序思路</p>
+                <p>基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。</p>
+                <p>
+                    　文件初态不同时，直接插入排序所耗费的时间有很大差异。若文件初态为正序，则每个待插入的记录只需要比较一次就能够找到合适的位置插入，故算法的时间复杂度为O(n)，这时最好的情况。若初态为反序，则第i个待插入记录需要比较i+1次才能找到合适位置插入，故时间复杂度为O(n2)，这时最坏的情况。</p>
+                <p>直接插入排序的平均时间复杂度为O(n2)。</p>
+                <pre class="java">
+	public static void InsertSort(int[] a) {
+		// 遍历进行排序
+		for (int i = 1; i < a.length; i++) {
+			int temp = a[i];
+			int j;
+			for (j = i - 1; j >= 0; j--) {
+				if (a[j] > temp) {
+					a[j + 1] = a[j];
+				} else {
+					break;
+				}
+			}
+			a[j+1] = temp;
+		}
+	}
+                </pre>
+            </div>
+
+            <div id="tab3" class="tab">
+                <p class="tt">排序思路</p>
+                <p>基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止。</p>
+                <p>
+                    　　二分插入排序的比较次数与待排序记录的初始状态无关，仅依赖于记录的个数。当n较大时，比直接插入排序的最大比较次数少得多。但大于直接插入排序的最小比较次数。算法的移动次数与直接插入排序算法的相同，最坏的情况为n2/2，最好的情况为n，平均移动次数为O(n2)。</p>
+                <pre class="java">
+	public static void SelfSort(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			int temp = a[i];
+			int left = 0;
+			int right = i - 1;
+			int mid = 0;
+			while (left <= right) {
+				mid = (left + right) / 2;
+				if (temp < a[mid]) {
+					right = mid - 1;
+				} else {
+					left = mid + 1;
+				}
+			}
+			for (int j = i - 1; j >= left; j--) {
+				a[j + 1] = a[j];
+			}
+			if (left != i) {
+				a[left] = temp;
+			}
+		}
+
+	}
+                </pre>
+            </div>
+
+            <div id="tab4" class="tab">
+                <p class="tt">排序思路</p>
+                <p>基本思想：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分成d1个组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2&lt;d1重复上述的分组和排序，直至所取的增量dt=1(dt&lt;dt-l&lt;…&lt;d2&lt;d1)，即所有记录放在同一组中进行直接插入排序为止。该方法实质上是一种分组插入方法。</p>
+                <p>我们知道一次插入排序是稳定的，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以希尔排序是不稳定的。</p>
+                <p>　希尔排序的时间性能优于直接插入排序，原因如下：
+                    <br/>
+                    　　（1）当文件初态基本有序时直接插入排序所需的比较和移动次数均较少。<br/>
+                    　　（2）当n值较小时，n和n2的差别也较小，即直接插入排序的最好时间复杂度O(n)和最坏时间复杂度0(n2)差别不大。<br/>
+                    　　（3）在希尔排序开始时增量较大，分组较多，每组的记录数目少，故各组内直接插入较快，后来增量di逐渐缩小，分组数逐渐减少，而各组的记录数目逐渐增多，但由于已经按di-1作为距离排过序，使文件较接近于有序状态，所以新的一趟排序过程也较快。<br/>
+                    　　因此，希尔排序在效率上较直接插人排序有较大的改进。</p>
+                <p>希尔排序的平均时间复杂度为O(nlogn)。</p>
+                <pre class="java">
+	public static void ShellSort(int[] a) {
+		int d = a.length;
+		while (true) {
+			d = d / 2;
+			for (int x = 0; x < d; x++) {
+				for (int i = x + d; i < a.length; i = i + d) {
+					int temp = a[i];
+					int j;
+					for (j = i - d; j >= 0 && a[j] > temp; j = j - d) {
+						a[j + d] = a[j];
+					}
+					a[j + d] = temp;
+				}
+			}
+			if (d == 1) {
+				break;
+			}
+		}
+	}
+                </pre>
+            </div>
+
+            <div id="tab3" class="tab">
+                <p class="tt">排序思路</p>
+                <p>基本思想：在要排序的一组数中，选出最小的一个数与第一个位置的数交换；然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。</p>
+                <p>简单选择排序是不稳定的排序。时间复杂度：T(n)=O(n2)。</p>
+                <pre class="java">
+	public static void SimpleSort(int[] a) {
+		for (int i = 0; i < a.length; i++) {
+			int min = a[i];
+			int n = i;
+			for (int j = i + 1; j < a.length; j++) {
+				if (a[j] < min) {
+					min = a[j];
+					n = j;
+				}
+			}
+			a[n] = a[i];
+			a[i] = min;
+		}
+	}
+                </pre>
+
+            </div>
+
+            <div id="tab5" class="tab">
+                <p class="tt">排序思路</p>
+                <p>基本思想：初始时把要排序的数的序列看作是一棵顺序存储的二叉树，调整它们的存储序，使之成为一个
+                    堆，这时堆的根节点的数最大。然后将根节点与堆的最后一个节点交换。然后对前面(n-1)个数重新调整使之成为堆。依此类推，直到只有两个节点的堆，并对
+                    它们作交换，最后得到有n个节点的有序序列。从算法描述来看，堆排序需要两个过程，一是建立堆，二是堆顶与堆的最后一个元素交换位置。所以堆排序有两个函数组成。一是建堆的渗透函数，二是反复调用渗透函数实现排序的函数。</p>
+                <p>堆排序也是一种不稳定的排序算法。</p>
+                <p>堆排序优于简单选择排序的原因：<br/>
+                    　　直接选择排序中，为了从R[1..n]中选出关键字最小的记录，必须进行n-1次比较，然后在R[2..n]中选出关键字最小的记录，又需要做n-2次比较。事实上，后面的n-2次比较中，有许多比较可能在前面的n-1次比较中已经做过，但由于前一趟排序时未保留这些比较结果，所以后一趟排序时又重复执行了这些比较操作。
+                    　　堆排序可通过树形结构保存部分比较结果，可减少比较次数。
+                    　　堆排序的最坏时间复杂度为O(nlogn)。堆序的平均性能较接近于最坏性能。由于建初始堆所需的比较次数较多，所以堆排序不适宜于记录数较少的文件。
+
+                </p>
+                <pre class="java">
+package com.sort;
+//不稳定
+import java.util.Arrays;
+
+public class HeapSort {
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64};
+        int arrayLength=a.length;
+        //循环建堆
+        for(int i=0;i&lt;arrayLength-1;i++){
+            //建堆
+            buildMaxHeap(a,arrayLength-1-i);
+            //交换堆顶和最后一个元素
+            swap(a,0,arrayLength-1-i);
+            System.out.println(Arrays.toString(a));
+        }
+    }
+    //对data数组从0到lastIndex建大顶堆
+    public static void buildMaxHeap(int[] data, int lastIndex){
+         //从lastIndex处节点（最后一个节点）的父节点开始
+        for(int i=(lastIndex-1)/2;i>=0;i--){
+            //k保存正在判断的节点
+            int k=i;
+            //如果当前k节点的子节点存在
+            while(k*2+1<=lastIndex){
+                //k节点的左子节点的索引
+                int biggerIndex=2*k+1;
+                //如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
+                if(biggerIndex&lt;lastIndex){
+                    //若果右子节点的值较大
+                    if(data[biggerIndex]&lt;data[biggerIndex+1]){
+                        //biggerIndex总是记录较大子节点的索引
+                        biggerIndex++;
+                    }
+                }
+                //如果k节点的值小于其较大的子节点的值
+                if(data[k]&lt;data[biggerIndex]){
+                    //交换他们
+                    swap(data,k,biggerIndex);
+                    //将biggerIndex赋予k，开始while循环的下一次循环，重新保证k节点的值大于其左右子节点的值
+                    k=biggerIndex;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    //交换
+    private static void swap(int[] data, int i, int j) {
+        int tmp=data[i];
+        data[i]=data[j];
+        data[j]=tmp;
+    }
+}
+                </pre>
+
+            </div>
+
+
+            <div id="tab6" class="tab">
+                <p class="tt">排序思路</p>
+                <p>
+                    基本思想：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。</p>
+                <p>冒泡排序是一种稳定的排序方法。　</p>
+                <p>堆排序优于简单选择排序的原因：<br/>
+                    •若文件初状为正序，则一趟起泡就可完成排序，排序码的比较次数为n-1，且没有记录移动，时间复杂度是O(n)<br/>
+                    •若文件初态为逆序，则需要n-1趟起泡，每趟进行n-i次排序码的比较，且每次比较都移动三次，比较和移动次数均达到最大值∶O(n2)<br/>
+                    •起泡排序平均时间复杂度为O(n2)
+
+                </p>
+                <pre class="java">
+package com.sort;
+
+//稳定
+public class 冒泡排序 {
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
+        System.out.println("排序之前：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+        //冒泡排序
+        for (int i = 0; i < a.length; i++) {
+            for(int j = 0; j<a.length-i-1; j++){
+                //这里-i主要是每遍历一次都把最大的i个数沉到最底下去了，没有必要再替换了
+                if(a[j]>a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
+        System.out.println();
+        System.out.println("排序之后：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+                </pre>
+            </div>
+            <div id="tab7" class="tab">
+                <p class="tt">排序思路</p>
+                <p>
+                    基本思想：选择一个基准元素,通常选择第一个元素或者最后一个元素,通过一趟扫描，将待排序列分成两部分,一部分比基准元素小,一部分大于等于基准元素,此时基准元素在其排好序后的正确位置,然后再用同样的方法递归地排序划分的两部分。</p>
+                <p>快速排序是不稳定的排序。　</p>
+                <p>快速排序的时间复杂度为O(nlogn)。
+                    <br/>
+                    当n较大时使用快排比较好，当序列基本有序时用快排反而不好。
+                </p>
+                <pre class="java">
+package com.sort;
+
+//不稳定
+public class 快速排序 {
+    public static void main(String[] args) {
+        int[] a={49,38,65,97,76,13,27,49,78,34,12,64,1,8};
+        System.out.println("排序之前：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+        //快速排序
+        quick(a);
+        System.out.println();
+        System.out.println("排序之后：");
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+" ");
+        }
+    }
+
+    private static void quick(int[] a) {
+        if(a.length>0){
+            quickSort(a,0,a.length-1);
+        }
+    }
+
+    private static void quickSort(int[] a, int low, int high) {
+        if(low&lt;high){ //如果不加这个判断递归会无法退出导致堆栈溢出异常
+            int middle = getMiddle(a,low,high);
+            quickSort(a, 0, middle-1);
+            quickSort(a, middle+1, high);
+        }
+    }
+
+    private static int getMiddle(int[] a, int low, int high) {
+        int temp = a[low];//基准元素
+        while(low&lt;high){
+            //找到比基准元素小的元素位置
+            while(low&lt;high && a[high]>=temp){
+                high--;
+            }
+            a[low] = a[high];
+            while(low&lt;high && a[low]<=temp){
+                low++;
+            }
+            a[high] = a[low];
+        }
+        a[low] = temp;
+        return low;
+    }
+}
+                </pre>
+            </div>
+            <div id="tab8" class="tab">
+                <p class="tt">排序思路</p>
+                <p>
+                    基本思想：归并（Merge）排序法是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再把有序子序列合并为整体有序序列。</p>
+                <p>归并排序是稳定的排序方法。　</p>
+                <p>归并排序的时间复杂度为O(nlogn)。
+                    <br/>
+                    速度仅次于快速排序，为稳定排序算法，一般用于对总体无序，但是各子项相对有序的数列。
+
+
+                </p>
+                <pre class="java">
+private static void mergeSort(int[] a, int left, int right) {
+        if(left&lt;right){
+            int middle = (left+right)/2;
+            //对左边进行递归
+            mergeSort(a, left, middle);
+            //对右边进行递归
+            mergeSort(a, middle+1, right);
+            //合并
+            merge(a,left,middle,right);
+        }
+    }
+
+    private static void merge(int[] a, int left, int middle, int right) {
+        int[] tmpArr = new int[a.length];
+        int mid = middle+1; //右边的起始位置
+        int tmp = left;
+        int third = left;
+        while(left<=middle && mid<=right){
+            //从两个数组中选取较小的数放入中间数组
+            if(a[left]<=a[mid]){
+                tmpArr[third++] = a[left++];
+            }else{
+                tmpArr[third++] = a[mid++];
+            }
+        }
+        //将剩余的部分放入中间数组
+        while(left<=middle){
+            tmpArr[third++] = a[left++];
+        }
+        while(mid<=right){
+            tmpArr[third++] = a[mid++];
+        }
+        //将中间数组复制回原数组
+        while(tmp<=right){
+            a[tmp] = tmpArr[tmp++];
+        }
+    }
+                </pre>
+            </div>
+            <div id="tab10" class="tab">
+                <p class="tt">排序思路</p>
+                <p>
+                    基本思想：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。这样从最低位排序一直到最高位排序完成以后,数列就变成一个有序序列。　</p>
+                <p>基数排序是稳定的排序算法。
+                    <br/>
+                    基数排序的时间复杂度为O(d(n+r)),d为位数，r为基数。
+
+
+                </p>
+                <pre class="java">
+    private static void sort(int[] array) {
+        //找到最大数，确定要排序几趟
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if(max&lt;array[i]){
+                max = array[i];
+            }
+        }
+        //判断位数
+        int times = 0;
+        while(max>0){
+            max = max/10;
+            times++;
+        }
+        //建立十个队列
+        List&lt;ArrayList> queue = new ArrayList&lt;ArrayList>();
+        for (int i = 0; i < 10; i++) {
+            ArrayList queue1 = new ArrayList();
+            queue.add(queue1);
+        }
+        //进行times次分配和收集
+        for (int i = 0; i < times; i++) {
+            //分配
+            for (int j = 0; j < array.length; j++) {
+                int x = array[j]%(int)Math.pow(10, i+1)/(int)Math.pow(10, i);
+                ArrayList queue2 = queue.get(x);
+                queue2.add(array[j]);
+                queue.set(x,queue2);
+            }
+            //收集
+            int count = 0;
+            for (int j = 0; j < 10; j++) {
+                while(queue.get(j).size()>0){
+                    ArrayList&lt;Integer> queue3 = queue.get(j);
+                    array[count] = queue3.get(0);
+                    queue3.remove(0);
+                    count++;
+                }
+            }
+        }
+    }
+                </pre>
+            </div>
+
+        </div>
+
+        <div class="menu2 menu_tab">
+            <div id="tab2-1" class="tab">
+                <p class="tt">定义二叉树结构</p>
+				<pre class="java">
+/**
+ * 二叉树数据结构
+ *
+ * @author 瞿龙俊
+ *
+ */
+class BinaryTreeNode {
+	int m_nValue;// 当前节点值
+	BinaryTreeNode m_pLeft;// 左子树节点
+	BinaryTreeNode m_pRight;// 右子树节点
+
+	// 构造函数
+	public BinaryTreeNode(int m_nValue) {
+		this.m_nValue = m_nValue;
+	}
+
+	// 构造函数
+	public BinaryTreeNode(int m_nValue, BinaryTreeNode m_pLeft,
+			BinaryTreeNode m_pRight) {
+		this.m_nValue = m_nValue;
+		this.m_pLeft = m_pLeft;
+		this.m_pRight = m_pRight;
+	}
+
+}
+
+
+				</pre>
+                <p class="tt">定义Result结果集</p>
+				<pre class="java">
+class Result {
+	int maxDistance;
+	int maxDepth;
+
+	public Result() {
+		// TODO 自动生成的构造函数存根
+	}
+
+	public Result(int maxDistance, int maxDepth) {
+		this.maxDistance = maxDistance;
+		this.maxDepth = maxDepth;
+	}
+
+}
+				</pre>
+            </div>
+            <div id="tab2-2" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，节点个数为0 （2）如果二叉树不为空，二叉树节点个数 = 左子树节点个数 + 右子树节点个数 + 1</p>
+                <p class="tt">非递归思路</p>
+                <p>使用Queue队列,将根节点入队,出队的时候,将出队节点的左右子树入队,使用计数器计算出队的个数.</p>
+                <pre class="java">
+	/**
+	 * 求二叉树中的节点个数（递归解法O(N)）
+	 *
+	 * @return 二叉树结点个数
+	 */
+	public int GetNodeNumRec(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		return GetNodeNumRec(root.m_pLeft) + GetNodeNumRec(root.m_pRight) + 1;
+	}
+
+
+	/**
+	 * 求二叉树中的节点个数（非递归解法O(N)）
+	 *
+	 * @return
+	 */
+	public int GetNodeNum(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		Queue&lt;BinaryTreeNode> treeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		int count = 1;
+		treeNodeQueue.add(root);
+		while (!treeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeQueue.remove();
+			if (treeNode.m_pLeft != null) {
+				treeNodeQueue.add(treeNode.m_pLeft);
+				count++;
+			}
+			if (treeNode.m_pRight != null) {
+				treeNodeQueue.add(treeNode.m_pRight);
+				count++;
+			}
+
+		}
+		return count;
+	}
+                </pre>
+
+            </div>
+
+            <div id="tab2-3" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，二叉树的深度为0 （2）如果二叉树不为空，二叉树的深度 = max(左子树深度， 右子树深度) + 1</p>
+                <p class="tt">非递归思路</p>
+                <p>用一个Queue存储结点，根节点入队列，出队列节点将该结点的左右结点入队列，记录当前层的结点数和下一层的结点。使用变量保存当前深度,当前层的结点数为0的时候，表示当前层全部出队列,深度递增.</p>
+                <pre class="java">
+	 /**
+	 * 求二叉树的深度（高度） 递归解法（O(N)）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetDepthRec(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		int leftDepth = GetDepthRec(root.m_pLeft);
+		int rightDepth = GetDepthRec(root.m_pRight);
+		return Math.max(leftDepth, rightDepth) + 1;
+	}
+
+	/**
+	 * 求二叉树的深度（高度） 迭代解法（O(N)）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetDepth(BinaryTreeNode root) {
+		if (root == null) {
+			return 0;
+		}
+		Queue&lt;BinaryTreeNode> treeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		int depth = 0;
+		int currentLevelNode = 1;// 当前层结点数，root为1个
+		int nextLevelNode = 0;
+		treeNodeQueue.add(root);
+		while (!treeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeQueue.remove();
+			currentLevelNode--;
+			if (treeNode.m_pLeft != null) {
+				treeNodeQueue.add(treeNode.m_pLeft);
+				nextLevelNode++;
+			}
+			if (treeNode.m_pRight != null) {
+				treeNodeQueue.add(treeNode.m_pRight);
+				nextLevelNode++;
+			}
+			if (currentLevelNode == 0) {
+				depth++;
+				currentLevelNode = nextLevelNode;
+				nextLevelNode = 0;
+			}
+		}
+		return depth;
+	}
+                </pre>
+            </div>
+
+            <div id="tab2-4" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，访问根节点，前序遍历左子树，前序遍历右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>使用栈进行模拟二叉树,入栈的时候，要先压入右孩子，然后压入左孩子，这样出栈的时候才是左孩子在前，右孩子在后</p>
+                <pre class="java">
+	/**
+	 * 前序遍历 递归解法
+	 *
+	 */
+	public void PreorderTraversalRec(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		System.out.println(root.m_nValue);
+		PreorderTraversalRec(root.m_pLeft);
+		PreorderTraversalRec(root.m_pRight);
+	}
+
+	/**
+	 * 前序遍历 迭代解法
+	 *
+	 * @param root
+	 */
+	public void PreorderTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> treeNodeStack = new Stack&lt;BinaryTreeNode>();
+		treeNodeStack.push(root);
+		while (!treeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = treeNodeStack.pop();
+			System.out.println(treeNode.m_nValue);
+			if (treeNode.m_pRight != null) {
+				treeNodeStack.push(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft != null) {
+				treeNodeStack.push(treeNode.m_pLeft);
+			}
+		}
+
+	}
+                </pre>
+            </div>
+
+            <div id="tab2-5" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，中序遍历左子树，访问根节点，中序遍历右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>使用栈进行模拟二叉树,先对所有左结点进行遍历,再从叶子结点开始,遍历右子树</p>
+                <pre class="java">
+	/**
+	 * 中序遍历 递归解法
+	 *
+	 */
+	public void InorderTraversalRec(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		InorderTraversalRec(root.m_pLeft);
+		System.out.println(root.m_nValue);
+		InorderTraversalRec(root.m_pRight);
+	}
+
+	/**
+	 * 中序遍历 迭代解法
+	 *
+	 * @param root
+	 */
+	public void InorderTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> treeNodeStack = new Stack&lt;BinaryTreeNode>();
+		BinaryTreeNode treeNode = root;
+		while (true) {
+			while (treeNode != null) {// 该循环把所有从根到叶子结点的所有左子树放到了栈中，出栈的时候就会先左叶子结点
+				treeNodeStack.push(treeNode);
+				treeNode = treeNode.m_pLeft;
+			}// 当跳出这个while循环时，treeNode为null，即为叶子结点，则说明它没有左结点，也没有右结点
+			if (treeNodeStack.isEmpty()) {
+				break;
+			}
+			treeNode = treeNodeStack.pop();// 将该结点出栈
+			System.out.println(treeNode.m_nValue);
+			treeNode = treeNode.m_pRight;// 指向右结点进行左结点遍历
+		}
+
+	}
+                </pre>
+            </div>
+
+            <div id="tab2-6" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，空操作 （2）如果二叉树不为空，后序遍历左子树，后序遍历右子树，访问根节点</p>
+                <p class="tt">非递归思路</p>
+                <p>binaryTreeNodeStack进栈顺序为根>左>右，出栈顺序为根>右>左(根先出栈，然后将该结点的左右结点入栈),outPut用来翻转输出结果，进栈顺序为根>右>左，出栈顺序为左>右>根</p>
+                <pre class="java">
+	/**
+	 * 层次遍历 递归解法 【很少出现】
+	 *
+	 * 基本思想是用一个大的ArrayList，里面包含了每一层的ArrayList。 大的ArrayList的size和level有关系
+	 *
+	 * @param root
+	 */
+	public void LevelTraversalRec(BinaryTreeNode root) {
+		ArrayList&lt;ArrayList&lt;Integer>> ret = new ArrayList&lt;ArrayList&lt;Integer>>();
+		dfs(root, 0, ret);
+		System.out.println(ret);
+	}
+
+	private static void dfs(BinaryTreeNode root, int level,
+			ArrayList&lt;ArrayList&lt;Integer>> ret) {
+		if (root == null)
+			return;
+		if (level >= ret.size()) { // 递归到下一层
+			ret.add(new ArrayList&lt;Integer>());// 新创建一个ArrayList
+		}
+		ret.get(level).add(root.m_nValue);// 当前结点值放入ArrayList
+		dfs(root.m_pLeft, level + 1, ret);
+		dfs(root.m_pRight, level + 1, ret);
+	}
+
+	/**
+	 * 层次遍历 迭代实现
+	 *
+	 * @param root
+	 */
+	public void LevelTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Queue&lt;BinaryTreeNode> binaryTreeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		binaryTreeNodeQueue.add(root);
+		while (!binaryTreeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeQueue.poll();
+			System.out.println(treeNode.m_nValue);
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pLeft);
+			}
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pRight);
+			}
+		}
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab2-7" class="tab">
+                <p class="tt">递归思路</p>
+                <p>【很少出现】用一个大的ArrayList，里面包含了每一层的ArrayList。 大的ArrayList的size和level有关系</p>
+                <p class="tt">非递归思路</p>
+                <p>使用Queue队列模拟,先将左子树进队列,然后将右子树出队列</p>
+                <pre class="java">
+	/**
+	 * 后序遍历 递归解法
+	 *
+	 */
+	public void PostorderTraversalRec(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		PostorderTraversalRec(root.m_pLeft);
+		PostorderTraversalRec(root.m_pRight);
+		System.out.println(root.m_nValue);
+	}
+
+	/**
+	 * 后序遍历 非递归解法
+	 *
+	 * @param root
+	 */
+	public void PostorderTraversal(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		Stack&lt;BinaryTreeNode> outPut = new Stack&lt;BinaryTreeNode>(); // 翻转第一个输出
+		binaryTreeNodeStack.push(root);
+		while (!binaryTreeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeStack.pop();// 根节点出栈
+			System.out.println(treeNode.m_nValue);
+			outPut.push(treeNode);
+			if (treeNode.m_pLeft != null) {// 左结点入栈
+				binaryTreeNodeStack.push(treeNode.m_pLeft);
+			}
+			if (treeNode.m_pRight != null) {// 右结点入栈
+				binaryTreeNodeStack.push(treeNode.m_pRight);
+			}
+		}
+		while (!outPut.isEmpty()) { // 进栈顺序为根>右>左，出栈顺序为左>右>根
+			System.out.println(outPut.pop().m_nValue + " ");
+		}
+	}
+                </pre>
+
+
+            </div>
+            <div id="tab2-8" class="tab">
+                <p class="tt">递归思路</p>
+                <p><a target="_blank" href="http://blog.csdn.net/ljianhui/article/details/22338405">链接</a>
+                    递归转换BST为双向链表:只需要将根节点左子树的最右叶子结点与根结点相连，右子树的最左叶子结点与根结点相连即可（互相）</p>
+                <p class="tt">非递归思路</p>
+                <p>非递归实现思路不太理解,待补充</p>
+                <pre class="java">
+	/**
+	 * 将二叉查找树变为有序的双向链表 要求不能创建新节点，只调整指针。【递归实现】
+	 *
+	 * @param root
+	 * @return
+	 */
+	public BinaryTreeNode ConvertBST2DLLRec(BinaryTreeNode root) {
+		root = convertBST2DLLSubRec(root);
+		return root;
+	}
+
+	/**
+	 * 递归转换BST为双向链表(DLL)
+	 *
+	 * @param root
+	 * @return
+	 */
+	public BinaryTreeNode convertBST2DLLSubRec(BinaryTreeNode root) {
+		if (root == null || root.m_pLeft == null || root.m_pRight == null)
+			return root;
+		BinaryTreeNode treeNode = null;
+		if (root.m_pLeft != null) {
+			treeNode = convertBST2DLLSubRec(root.m_pLeft);
+			while (treeNode.m_pRight != null) {
+				treeNode = treeNode.m_pRight;
+			}
+			treeNode.m_pRight = root;
+			root.m_pLeft = treeNode;
+		}
+		if (root.m_pLeft != null) {
+			treeNode = convertBST2DLLSubRec(root.m_pRight);
+			while (treeNode.m_pLeft != null) {
+				treeNode = treeNode.m_pLeft;
+			}
+			treeNode.m_pLeft = root;
+			root.m_pRight = treeNode;
+		}
+
+		return root;
+
+	}
+
+	/**
+	 * 【思考】 将二叉查找树变为有序的双向链表 要求不能创建新节点，只调整指针。【迭代实现】
+	 *
+	 * @param root
+	 * @return
+	 */
+	public BinaryTreeNode ConvertBST2DLL(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		BinaryTreeNode curNode = root;// 指向当前处理结点
+		BinaryTreeNode oldNode = null;// 指向上一个处理结点
+		BinaryTreeNode head = null;// 链表头
+
+		while (true) {
+			while (curNode != null) {
+				binaryTreeNodeStack.push(curNode);
+				curNode = curNode.m_pLeft;
+			}
+
+			if (binaryTreeNodeStack.isEmpty()) {
+				break;
+			}
+			curNode = binaryTreeNodeStack.pop();
+			if (oldNode != null) {
+				oldNode.m_pRight = curNode;
+			}
+			if (head == null) {
+				head = curNode;
+			}
+			oldNode = curNode;
+			curNode = curNode.m_pRight;
+		}
+		return head;
+	}
+                </pre>
+            </div>
+            <div id="tab2-9" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空或者k<1返回0 （2）如果二叉树不为空并且k==1，返回1.（3）如果二叉树不为空且k>1，返回root左子树中k-1层的节点个数与root右子树k-1层节点个数之和</p>
+                <p class="tt">非递归思路</p>
+                <p>思路和"求二叉树深度"问题类似,使用变量存储当前层级,在while循环中增加结束条件:若当前层级等于k层</p>
+                <pre class="java">
+	/**
+	 * 求二叉树第K层的节点个数 递归解法：
+	 *
+	 *
+	 * @param root
+	 * @param k
+	 * @return
+	 */
+	public int GetNodeNumKthLevelRec(BinaryTreeNode root, int k) {
+		if (root == null || k < 1)
+			return 0;
+		if (k == 1)
+			return 1;
+		int leftNodeNum = GetNodeNumKthLevelRec(root.m_pLeft, k - 1);
+		int rightNodeNum = GetNodeNumKthLevelRec(root.m_pRight, k - 1);
+		return leftNodeNum + rightNodeNum;
+	}
+
+	/**
+	 * 求二叉树第K层的节点个数 迭代解法：
+	 *
+	 * @param root
+	 * @param k
+	 * @return
+	 */
+	public int GetNodeNumKthLevel(BinaryTreeNode root, int k) {
+		if (root == null)
+			return 0;
+		Queue&lt;BinaryTreeNode> binaryTreeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		binaryTreeNodeQueue.add(root);
+		int i = 1;
+		int currentLevel = 1;
+		int nextLevel = 0;
+		while (!binaryTreeNodeQueue.isEmpty() && i < k) {
+			BinaryTreeNode treeNode = binaryTreeNodeQueue.poll();
+			currentLevel--;
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pLeft);
+				nextLevel++;
+			}
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pRight);
+				nextLevel++;
+			}
+			if (currentLevel == 0) {
+				currentLevel = nextLevel;
+				nextLevel = 0;
+				i++;
+			}
+		}
+
+		return currentLevel;
+	}
+                </pre>
+
+            </div>
+            <div id="tab2-10" class="tab">
+                <p class="tt">递归思路</p>
+                <p>判定规则:不存在左子树和右子树的节点为叶子节点,为递归退出条件.</p>
+                <p class="tt">非递归思路</p>
+                <p>思路和"求二叉树节点数"问题类似,区别在于求二叉树节点数时,只要出队列即计数器加1,求叶子节点数需要增加判断:左右子树为空,</p>
+                <pre class="java">
+	 /**
+	 * 求二叉树中叶子节点的个数（递归）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetNodeNumLeafRec(BinaryTreeNode root) {
+		if (root == null) // root不存在，返回0
+			return 0;
+		if (root.m_pLeft == null && root.m_pRight == null) { // 递归结束条件：不存在左子树和右子树
+			return 1;
+		}
+		return GetNodeNumLeafRec(root.m_pLeft)
+				+ GetNodeNumLeafRec(root.m_pRight);
+	}
+
+	/**
+	 * 求二叉树中叶子节点的个数（迭代）
+	 *
+	 * @param root
+	 * @return
+	 */
+	public int GetNodeNumLeaf(BinaryTreeNode root) {
+		if (root == null)
+			return 0;
+		Queue&lt;BinaryTreeNode> binaryTreeNodeQueue = new LinkedList&lt;BinaryTreeNode>();
+		binaryTreeNodeQueue.add(root);
+		int leftNodes = 0;
+		while (!binaryTreeNodeQueue.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeQueue.poll();
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pLeft);
+			}
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeQueue.add(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft == null && treeNode.m_pRight == null) {
+				leftNodes++;
+			}
+		}
+		return leftNodes;
+	}
+                </pre>
+
+            </div>
+            <div id="tab2-11" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果两棵二叉树都为空，返回真 （2）如果两棵二叉树一棵为空，另一棵不为空，返回假.（3）如果两棵二叉树都不为空，如果对应的左子树和右子树都同构返回真，其他返回假</p>
+                <p class="tt">非递归思路</p>
+                <p>待理解,</p>
+                <pre class="java">
+     /**
+	 * 判断两棵二叉树是否相同的树(递归解法)
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isSameRec(BinaryTreeNode root1, BinaryTreeNode root2) {
+		if (root1 == null && root2 == null) {
+			return true;
+		} else if (root1 == null || root2 == null) {
+			return false;
+		}
+		if (root1.m_nValue != root2.m_nValue)
+			return false;
+
+		boolean leftSame = isSameRec(root1.m_pLeft, root2.m_pLeft);
+		boolean rightSame = isSameRec(root1.m_pRight, root2.m_pRight);
+		return leftSame && rightSame;
+	}
+
+	/**
+	 * 判断两棵二叉树是否相同的树(迭代解法)
+	 *
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isSame(BinaryTreeNode root1, BinaryTreeNode root2) {
+		if (root1 == null && root2 == null) {
+			return true;
+		} else if (root1 == null || root2 == null) {
+			return false;
+		}
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack1 = new Stack&lt;BinaryTreeNode>();
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack2 = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack1.push(root1);
+		binaryTreeNodeStack2.push(root2);
+		while (!binaryTreeNodeStack1.isEmpty()
+				&& !binaryTreeNodeStack2.isEmpty()) {
+			BinaryTreeNode treeNode1 = binaryTreeNodeStack1.pop();
+			BinaryTreeNode treeNode2 = binaryTreeNodeStack2.pop();
+			if (treeNode1 == null && treeNode2 == null) {
+				continue;
+			} else if (treeNode1 != null && treeNode2 != null
+					&& treeNode1.m_nValue == treeNode2.m_nValue) {
+				binaryTreeNodeStack1.push(treeNode1.m_pRight);
+				binaryTreeNodeStack1.push(treeNode1.m_pLeft);
+				binaryTreeNodeStack2.push(treeNode2.m_pRight);
+				binaryTreeNodeStack2.push(treeNode2.m_pLeft);
+			} else
+				return false;
+
+		}
+		return true;
+
+	}
+                </pre>
+            </div>
+            <div id="tab2-12" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果二叉树为空，返回真 （2）如果二叉树不为空，如果左子树和右子树都是AVL树并且左子树和右子树高度相差不大于1，返回真，其他返回假</p>
+                <pre class="java">
+/**
+	 * 判断二叉树是不是平衡二叉树 递归解法：
+	 *
+	 * @param root
+	 * @return
+	 */
+	public boolean isAVLRec(BinaryTreeNode root) {
+		if (root == null)
+			return true;
+		// 判断当前结点左子树和右子树高度差是否大于1
+		if (Math.abs(GetDepth(root.m_pLeft) - GetDepth(root.m_pRight)) > 1) {
+			return false;
+		}
+		return isAVLRec(root.m_pLeft) && isAVLRec(root.m_pRight);
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab2-13" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+/    /**
+	 * 求二叉树的镜像 递归实现
+	 *
+	 * （1）如果二叉树为空，返回空 （2）如果二叉树不为空，求左子树和右子树的镜像，然后交换左子树和右子树
+	 *
+	 * 破坏原来的树，把原来的树破坏掉
+	 *
+	 * @return
+	 */
+	public BinaryTreeNode MirrorRec(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+		BinaryTreeNode leftTreeNode = MirrorRec(root.m_pLeft);
+		BinaryTreeNode rightTreeNode = MirrorRec(root.m_pRight);
+		root.m_pLeft = rightTreeNode;
+		root.m_pRight = leftTreeNode;
+		return root;
+	}
+
+	/**
+	 * 求二叉树的镜像 递归实现
+	 *
+	 * （1）如果二叉树为空，返回空 （2）如果二叉树不为空，求左子树和右子树的镜像，然后交换左子树和右子树
+	 *
+	 * 不能破坏原来的树，返回一个新的镜像树
+	 *
+	 * @return
+	 */
+	public BinaryTreeNode MirrorCopyRec(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+
+		BinaryTreeNode leftTreeNode = MirrorRec(root.m_pLeft);
+		BinaryTreeNode rightTreeNode = MirrorRec(root.m_pRight);
+		BinaryTreeNode treeNode = new BinaryTreeNode(root.m_nValue,
+				rightTreeNode, leftTreeNode);
+		return treeNode;
+	}
+
+	/**
+	 * 判断两个树是否互相镜像 递归实现
+	 *
+	 * @param root1
+	 * @param root2
+	 * @return
+	 */
+	public boolean isMirrorRec(BinaryTreeNode root1, BinaryTreeNode root2) {
+
+		if (root1 == null && root2 == null) {
+			return true;
+		} else {
+			if (root1 == null || root2 == null)
+				return false;
+		}
+		if (root1.m_nValue != root2.m_nValue) // 判断根值是否一样
+			return false;
+
+		// 判断左右子树是否一样
+		return isMirrorRec(root1.m_pLeft, root2.m_pRight)
+				&& isMirrorRec(root1.m_pRight, root2.m_pLeft);
+	}
+
+	/**
+	 * 求二叉树的镜像 迭代实现
+	 *
+	 *
+	 * 破坏原来的树，把原来的树破坏掉
+	 *
+	 * @return
+	 */
+	public void mirror(BinaryTreeNode root) {
+		if (root == null)
+			return;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack.push(root);
+		while (!binaryTreeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeStack.pop();
+			BinaryTreeNode temp = treeNode.m_pLeft;
+			treeNode.m_pLeft = treeNode.m_pRight;
+			treeNode.m_pRight = temp;
+			if (treeNode.m_pRight != null) {
+				binaryTreeNodeStack.push(treeNode.m_pRight);
+			}
+			if (treeNode.m_pLeft != null) {
+				binaryTreeNodeStack.push(treeNode.m_pLeft);
+			}
+		}
+	}
+
+	/**
+	 * 求二叉树的镜像 迭代实现
+	 *
+	 * 不能破坏原来的树，返回一个新的镜像树
+	 *
+	 * @param root
+	 * @return
+	 */
+	public BinaryTreeNode MirrorCopy(BinaryTreeNode root) {
+		if (root == null)
+			return null;
+		Stack&lt;BinaryTreeNode> binaryTreeNodeStack = new Stack&lt;BinaryTreeNode>();
+		Stack&lt;BinaryTreeNode> newStack = new Stack&lt;BinaryTreeNode>();
+		binaryTreeNodeStack.push(root);
+		BinaryTreeNode newRoot = new BinaryTreeNode(root.m_nValue);
+		newStack.push(newRoot);
+		while (!binaryTreeNodeStack.isEmpty()) {
+			BinaryTreeNode treeNode = binaryTreeNodeStack.pop(); // 根先出栈
+			BinaryTreeNode newTreeNode = newStack.pop();
+			if (treeNode.m_pRight != null) { // 右子树出栈
+				binaryTreeNodeStack.push(treeNode.m_pRight);
+				newTreeNode.m_pLeft = new BinaryTreeNode(
+						treeNode.m_pRight.m_nValue);
+				newStack.push(newTreeNode.m_pLeft);
+
+			}
+			if (treeNode.m_pLeft != null) {// 左子树出栈
+				binaryTreeNodeStack.push(treeNode.m_pLeft);
+				newTreeNode.m_pRight = new BinaryTreeNode(
+						treeNode.m_pLeft.m_nValue);
+				newStack.push(newTreeNode.m_pRight);
+
+			}
+		}
+		return newRoot;
+	}
+
+
+                </pre>
+
+            </div>
+            <div id="tab2-14" class="tab">
+                <p class="tt">递归思路</p>
+                <p>（1）如果两个节点分别在根节点的左子树和右子树，则返回根节点（2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树</p>
+                <p class="tt">非递归思路</p>
+                <p>先求从根节点到两个节点的路径，然后再比较对应路径的节点就行，最后一个相同的节点也就是他们在二叉树中的最低公共祖先节点</p>
+                <pre class="java">
+/**
+	 * 求二叉树中两个节点的最低公共祖先节点 递归解法
+	 *
+	 * （1）如果两个节点分别在根节点的左子树和右子树，则返回根节点
+	 * （2）如果两个节点都在左子树，则递归处理左子树；如果两个节点都在右子树，则递归处理右子树
+	 *
+	 *
+	 * @param root
+	 * @param n1
+	 * @param n2
+	 * @return
+	 */
+	public BinaryTreeNode GetLastCommonParentRec(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (findNodeRec(root.m_pLeft, n1)) {
+			if (findNodeRec(root.m_pRight, n2)) {
+				return root;
+			} else {
+				return GetLastCommonParentRec(root.m_pLeft, n1, n2);
+			}
+		} else {
+			if (findNodeRec(root.m_pLeft, n2)) {
+				return root;
+			} else {
+				return GetLastCommonParentRec(root.m_pRight, n1, n2);
+			}
+		}
+	}
+
+	/**
+	 * 辅助方法，判断一个点是否在树里
+	 *
+	 * 若root为null或者treeNode为null，则直接返回false
+	 *
+	 * @param root
+	 * @param treeNode
+	 * @return
+	 */
+	private boolean findNodeRec(BinaryTreeNode root, BinaryTreeNode treeNode) {
+		if (root == null || treeNode == null)
+			return false;
+		if (root == treeNode) // 递归结束条件，root和treeNode相等
+			return true;
+		// 递归查找左子树中和右子树中是否有该值
+		return findNodeRec(root.m_pLeft, treeNode)
+				|| findNodeRec(root.m_pRight, treeNode);
+	}
+
+	public BinaryTreeNode GetLastCommonParentRec2(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (root == null)
+			return null;
+		if (root == n1 || root == n2) { // 用来结束递归，判断当前结点是否和n1或者和n2一样
+			return root;
+		}
+		BinaryTreeNode leftTreeNode = GetLastCommonParentRec2(root.m_pLeft, n1,
+				n2);// 从左子树中找n1或者n2结点
+		BinaryTreeNode rightTreeNode = GetLastCommonParentRec2(root.m_pRight,
+				n1, n2);// 从右子树中找N1或者N2
+		if (leftTreeNode != null && rightTreeNode != null) {
+			// 左子树和右子树各有一个，则说明公共根结点为root
+			return root;
+		}
+		if (leftTreeNode != null)// 如果右子树为空，则说明在左子树
+			return leftTreeNode;
+		return rightTreeNode;
+	}
+
+	/**
+	 * 求二叉树中两个节点的最低公共祖先节点 迭代解法
+	 *
+	 * 先求从根节点到两个节点的路径，然后再比较对应路径的节点就行，最后一个相同的节点也就是他们在二叉树中的最低公共祖先节点
+	 *
+	 * @param root
+	 * @param n1
+	 * @param n2
+	 * @return
+	 */
+	public BinaryTreeNode GetLastCommonParent(BinaryTreeNode root,
+			BinaryTreeNode n1, BinaryTreeNode n2) {
+		if (root == null)
+			return null;
+		ArrayList&lt;BinaryTreeNode> n1List = new ArrayList&lt;BinaryTreeNode>();
+		boolean n1Path = getNodePath(root, n1, n1List);
+		ArrayList&lt;BinaryTreeNode> n2List = new ArrayList&lt;BinaryTreeNode>();
+		boolean n2Path = getNodePath(root, n2, n2List);
+
+		BinaryTreeNode last = null;
+		if (!n1Path || !n2Path)
+			return null;
+		Iterator&lt;BinaryTreeNode> node_it1 = n1List.iterator();
+		Iterator&lt;BinaryTreeNode> node_it2 = n2List.iterator();
+		while (node_it1.hasNext() && node_it2.hasNext()) {
+			BinaryTreeNode treeNode_1 = node_it1.next();
+			BinaryTreeNode treeNode_2 = node_it2.next();
+			if (treeNode_1 == treeNode_2) {
+				last = treeNode_1;
+			} else {
+				break;
+			}
+		}
+
+		return last;
+	}
+
+     /**
+	 * 从根节点到node结点路径上所有的结点都添加到path路径中
+	 *
+	 * @param root
+	 * @param node
+	 * @param nodeList
+	 * @return
+	 */
+	private boolean getNodePath(BinaryTreeNode root, BinaryTreeNode node,
+			ArrayList&lt;BinaryTreeNode> path) {
+		if (root == null)
+			return false;
+		path.add(root); // 把这个节点加到路径中
+		if (root == node) {
+			return true;
+		}
+		boolean find = getNodePath(root.m_pLeft, node, path);// 先在左子树中找
+		if (!find) { // 如果没找到，再在右子树找
+			find = getNodePath(root.m_pRight, node, path);
+		}
+		if (!find) { // 如果实在没找到证明这个节点不在路径中，说明刚才添加进去的不是路径上的节点，删掉！
+			path.remove(root);
+		}
+		return find;
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab2-15" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 求二叉树中节点的最大距离 即二叉树中相距最远的两个节点之间的距离，递归解法
+	 *
+	 * （1）如果二叉树为空，返回0，同时记录左子树和右子树的深度，都为0
+	 * （2）如果二叉树不为空，最大距离要么是左子树中的最大距离，要么是右子树中的最大距离，
+	 * 要么是左子树节点中到根节点的最大距离+右子树节点中到根节点的最大距离，同时记录左子树和右子树节点中到根节点的最大距离。
+	 *
+	 *
+	 * 计算一个二叉树的最大距离有两个情况:
+	 *
+	 * 情况A: 路径经过左子树的最深节点，通过根节点，再到右子树的最深节点。 情况B: 路径不穿过根节点，而是左子树或右子树的最大距离路径，取其大者。
+	 * 只需要计算这两个情况的路径距离，并取其大者，就是该二叉树的最大距离
+	 *
+	 * @param root
+	 * @return
+	 */
+	public Result GetMaxDistanceRec(BinaryTreeNode root) {
+		if (root == null) {
+			Result empty = new Result(0, -1); // 目的是让调用方 +1 后，把当前的不存在的
+												// (NULL)子树当成最大深度为 0
+			return empty;
+		}
+		Result lResult = GetMaxDistanceRec(root.m_pLeft);
+		Result rResult = GetMaxDistanceRec(root.m_pRight);
+		Result res = new Result();
+		res.maxDepth = Math.max(lResult.maxDepth, rResult.maxDepth) + 1; // 当前最大深度
+		// 取情况A和情况B中较大值
+		res.maxDistance = Math.max(lResult.maxDepth + rResult.maxDepth,
+				Math.max(lResult.maxDistance, rResult.maxDistance));
+		return res;
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab2-16" class="tab">
+                <p class="tt">递归思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 由前序遍历序列和中序遍历序列重建二叉树
+	 *
+	 * @param preOrder
+	 * @param inOrder
+	 * @return
+	 */
+	public BinaryTreeNode RebuildBinaryTreeRec(List&lt;Integer> preOrder,
+			List&lt;Integer> inOrder) {
+
+		BinaryTreeNode root = null;
+		List&lt;Integer> leftPreOrder;
+		List&lt;Integer> rightPreOrder;
+		List&lt;Integer> leftInorder;
+		List&lt;Integer> rightInorder;
+		int inorderPos;
+		int preorderPos;
+		if ((preOrder.size() != 0) && (inOrder.size() != 0)) {
+			// 把preorder的第一个元素作为root
+			root = new BinaryTreeNode(preOrder.get(0));
+			// 知道root节点，所以根据root节点位置，把preorder，inorder分别划分为 root左侧和右侧 的两个子区间
+			inorderPos = inOrder.indexOf(preOrder.get(0)); // inorder序列的分割点
+			leftInorder = inOrder.subList(0, inorderPos);
+			rightInorder = inOrder.subList(inorderPos + 1, inOrder.size());
+			preorderPos = leftInorder.size(); // preorder序列的分割点
+			leftPreOrder = preOrder.subList(1, preorderPos + 1);
+			rightPreOrder = preOrder.subList(preorderPos + 1, preOrder.size());
+			root.m_pLeft = RebuildBinaryTreeRec(leftPreOrder, leftInorder); // root的左子树就是preorder和inorder的左侧区间而形成的树
+			root.m_pRight = RebuildBinaryTreeRec(rightPreOrder, rightInorder); // root的右子树就是preorder和inorder的右侧区间而形成的树
+		}
+		return root;
+	}
+
+
+import java.util.*;
+/**
+ * Definition for binary tree
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Solution {
+    public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
+       if(pre.length == 0||in.length == 0){
+            return null;
+        }
+        TreeNode node = new TreeNode(pre[0]);
+        for(int i = 0; i < in.length; i++){
+            if(pre[0] == in[i]){
+                node.left = reConstructBinaryTree(Arrays.copyOfRange(pre, 1, i+1), Arrays.copyOfRange(in, 0, i));
+                node.right = reConstructBinaryTree(Arrays.copyOfRange(pre, i+1, pre.length), Arrays.copyOfRange(in, i+1,in.length));
+            }
+        }
+        return node;
+    }
+}
+                </pre>
+
+            </div>
+        </div>
+
+        <div class="menu3 menu_tab">
+            <div id="tab3-1" class="tab">
+                <p class="tt">定义单链表结构</p>
+				<pre class="java">
+// 链表基本类型
+class Node {
+	int m_value;
+	Node m_next;
+
+	// 构造函数
+	public Node(int m_value, Node m_next) {
+		this.m_value = m_value;
+		this.m_next = m_next;
+	}
+
+	// 构造函数
+	public Node(int m_value) {
+		this.m_value = m_value;
+	}
+
+	// 构造函数
+	public Node() {
+	}
+
+}
+				</pre>
+            </div>
+            <div id="tab3-2" class="tab">
+                <p class="tt">思路</p>
+                <p>使用变量count记录当前节点个数，while循环结束条件：当前结点为null</p>
+                <pre class="java">
+	/**
+	 * 求单链表中节点的个数 O(n) 使用变量count记录当前节点个数，while循环结束条件：当前结点为null
+	 *
+	 * @param head
+	 * @return
+	 */
+	public int GetListLength(Node head) {
+		if (head == null) {
+			return 0;
+		}
+		int count = 0;
+		Node curNode = head;
+		while (curNode != null) {
+			count++;
+			curNode = curNode.m_next;
+		}
+		return count;
+	}
+                </pre>
+
+            </div>
+            <div id="tab3-3" class="tab">
+                <p class="tt">思路</p>
+                <p>创建一个新链表，将原链表中的节点依次从新链表头部放入</p>
+                <pre class="java">
+	/**
+	 * 链表的翻转 基本思路为创建一个新链表，将原链表中的节点依次从新链表头部放入
+	 *
+	 * @param head
+	 * @return
+	 */
+	public Node ReverseList(Node head) {
+		if (head == null || head.m_next == null)
+			return head;
+		Node reHead = null;
+		Node curNode = head;
+		while (curNode != null) {
+			Node preHead = curNode; // 创建一个新的结点，将当前老链表结点赋给它
+			curNode = curNode.m_next; // 老链表节点指向下一个节点
+			preHead.m_next = reHead; // 新结点的下一个结点指向新链表的头节点
+			reHead = preHead; // 将新链表头结点指向新创建的结点
+		}
+		return reHead;
+	}
+
+	/**
+	 * 链表的翻转 递归实现
+	 *
+	 * 递归的精髓在于你就默认reverseListRec已经成功帮你解决了子问题了！但别去想如何解决的
+	 *
+	 * 现在只要处理当前node和子问题之间的关系。最后就能圆满解决整个问题。
+	 *
+	 * @param head
+	 * @return
+	 */
+	public Node ReverseListRec(Node head) {
+		if (head == null || head.m_next == null) {
+			return head;
+		}
+		Node reHead = ReverseListRec(head.m_next);
+		head.m_next.m_next = head;
+		head.m_next = null;
+		return reHead;
+
+	}
+                </pre>
+
+            </div>
+            <div id="tab3-4" class="tab">
+                <p class="tt">思路</p>
+                <p>使用两个指针，先让前面的指针走到正向第k个结点，这样前后两个指针的距离差是k-1，之后前后两个指针一起向前走，前面的指针走到最后一个结点时，后面指针所指结点就是倒数第k个结点</p>
+                <pre class="java">
+	/**
+	 * 查找单链表中倒数第k个结点(k>0)
+	 *
+	 * 最普遍的方法是，先统计单链表中结点的个数，然后再找到第（n-k）个结点。注意链表为空，k为0，k为1，k大于链表中节点个数时的情况
+	 * 。时间复杂度为O（n）
+	 *
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	public Node ReGetKthNode(Node head, int k) {
+		if (head == null)
+			return null;
+		int length = GetListLength(head);
+		int revertNum = length - k;
+		if (revertNum < 0 || k == 0)
+			return null;
+		int i = 0;
+		Node curNode = head;
+		while (curNode != null && i != revertNum) {
+			curNode = curNode.m_next;
+			i++;
+		}
+		return curNode;
+	}
+
+	/**
+	 * 查找单链表中倒数第k个结点(k>0)
+	 *
+	 * 使用两个指针，先让前面的指针走到正向第k个结点
+	 * ，这样前后两个指针的距离差是k-1，之后前后两个指针一起向前走，前面的指针走到最后一个结点时，后面指针所指结点就是倒数第k个结点
+	 *
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	public Node ReGetKthNode2(Node head, int k) {
+		if (head == null || k == 0)
+			return null;
+		int first = 0; // 标记firstNode当前位置
+		Node firstNode = head, lastNode = head;
+		while (firstNode != null && first < k) {// 先让firstNode走到第k个的位置
+			first++;
+			firstNode = firstNode.m_next;
+		}
+		while (firstNode != null) {// 然后两个一起走
+			firstNode = firstNode.m_next;
+			lastNode = lastNode.m_next;
+		}
+		return lastNode;
+	}
+
+	/**
+	 * 查找单链表中倒数第K的结点 递归实现
+	 *
+	 * 通过递归走到最末尾的结点，然后依次退出结点
+	 *
+	 * @param head
+	 * @param k
+	 * @return
+	 */
+	int level = 0;
+
+	public void ReGetKthNodeRec(Node head, int k) {
+		if (head == null || k == 0) {
+			return;
+		}
+		ReGetKthNodeRec(head.m_next, k);
+		level++;
+		if (level == k) {
+			System.out.println(head.m_value);
+		}
+	}
+                </pre>
+
+            </div>
+            <div id="tab3-5" class="tab">
+                <p class="tt">思路</p>
+                <p>
+                    设置两个指针，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步，前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O(n)</p>
+                <pre class="java">
+	/**
+	 * 查找单链表的中间结点
+	 *
+	 * 设置两个指针，两个指针同时向前走，前面的指针每次走两步，后面的指针每次走一步，
+	 * 前面的指针走到最后一个结点时，后面的指针所指结点就是中间结点，即第（
+	 * n/2+1）个结点。注意链表为空，链表结点个数为1和2的情况。时间复杂度O(n)
+	 *
+	 * @param head
+	 * @return
+	 */
+	public Node GetMiddleNode(Node head) {
+		if (head == null || head.m_next == null)
+			return head;
+		Node firstNode = head;
+		Node lastNode = head;
+		// 前面指针每次走两步，直到指向最后一个结点，后面指针每次走一步
+		while (firstNode.m_next != null) {
+			firstNode = firstNode.m_next;
+			lastNode = lastNode.m_next;
+			if (firstNode.m_next != null) {
+				firstNode = firstNode.m_next;
+			}
+		}
+		return lastNode;
+	}
+                </pre>
+
+            </div>
+            <div id="tab3-6" class="tab">
+                <p class="tt">思路</p>
+                <p>对于这种颠倒顺序的问题，我们应该就会想到栈，后进先出。所以，这一题要么自己使用栈，要么让系统使用栈，也就是递归。注意链表为空的情况</p>
+                <pre class="java">
+	/**
+	 * 从尾到头打印单链表
+	 *
+	 * 对于这种颠倒顺序的问题，我们应该就会想到栈，后进先出。所以，这一题要么自己使用栈，要么让系统使用栈，也就是递归。注意链表为空的情况
+	 *
+	 * @param head
+	 */
+	public void ReversePrintListStack(Node head) {
+		Stack&lt;Node> nodeStack = new Stack&lt;Node>();
+		if (head == null)
+			return;
+		Node curNode = head;
+		while (curNode != null) {
+			nodeStack.push(curNode);
+			curNode = curNode.m_next;
+		}
+		while (!nodeStack.isEmpty()) {
+			System.out.println(nodeStack.pop().m_value);
+		}
+	}
+
+	/**
+	 * 从尾到头打印单链表 递归实现
+	 */
+	public void ReversePrintListRec(Node head) {
+		if (head == null) {
+			return;
+		} else {
+			ReversePrintListRec(head.m_next);
+			System.out.println(head.m_value);
+		}
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab3-7" class="tab">
+                <p class="tt">思路</p>
+                <p>这个类似归并排序。尤其注意两个链表都为空，和其中一个为空时的情况。只需要O（1）的空间。时间复杂度为O（max(len1, len2)）</p>
+                <P> 1）若head1或者head2为空，返回另一个<br/>
+                    2）比较head1和head2的值，若head1大，则head1被加入新链表，然后比较head1的next和head2大小，反之亦然。</P>
+                <pre class="java">
+	/**
+	 * 已知两个单链表pHead1 和pHead2 各自有序，把它们合并成一个链表依然有序
+	 *
+	 * 这个类似归并排序。尤其注意两个链表都为空，和其中一个为空时的情况。只需要O（1）的空间。时间复杂度为O（max(len1, len2)）
+	 *
+	 *
+	 * @param head1
+	 * @param head2
+	 * @return
+	 */
+	public Node MergeSortedList(Node head1, Node head2) {
+		if (head1 == null)
+			return head2;
+		if (head2 == null)
+			return head2;
+
+		Node mergeNode = null;
+		if (head1.m_value < head2.m_value) { // 选择一个根节点加入，找到mergeNode的起始结点
+			mergeNode = head1;
+			head1 = head1.m_next;
+			mergeNode.m_next = null;
+		} else {
+			mergeNode = head2;
+			head2 = head2.m_next;
+			mergeNode.m_next = null;
+		}
+
+		Node mergeCur = mergeNode;
+		while (head1 != null && head2 != null) {
+			if (head1.m_value < head2.m_value) {
+				mergeCur.m_next = head1; // 此处将mergeCur链表后面将包括head1在内的之后所有的链表加入mergeCur中
+				head1 = head1.m_next; // head1指向之后的节点
+				mergeCur = mergeCur.m_next;// 将mergeCur之后的一个结点信息赋给mergeCur
+				mergeCur.m_next = null;// 断开mergeCur与之后的联系
+
+			} else {
+				mergeCur.m_next = head2;
+				head2 = head2.m_next;
+				mergeCur = mergeCur.m_next;
+				mergeCur.m_next = null;
+			}
+		}
+
+		if (head1 != null) {
+			mergeCur.m_next = head1;
+		} else if (head2 != null) {
+			mergeCur.m_next = head2;
+		}
+		return mergeNode;
+	}
+
+	/**
+	 * 已知两个单链表pHead1 和pHead2 各自有序，把它们合并成一个链表依然有序 递归解法
+	 *
+	 * （1）若head1或者head2为空，返回另一个
+	 * （2）比较head1和head2的值，若head1大，则head1被加入新链表，然后比较head1的next和head2大小，反之亦然。
+	 *
+	 * @param head1
+	 * @param head2
+	 * @return
+	 */
+	public Node MergeSortedListRec(Node head1, Node head2) {
+		if (head1 == null)
+			return head2;
+		if (head2 == null)
+			return head1;
+		Node mergedNode = null;
+		if (head1.m_value < head2.m_value) {
+			mergedNode = head1;
+			mergedNode.m_next = MergeSortedListRec(head1.m_next, head2);
+		} else {
+			mergedNode = head2;
+			mergedNode.m_next = MergeSortedListRec(head1, head2.m_next);
+		}
+		return mergedNode;
+	}
+
+                </pre>
+
+            </div>
+            <div id="tab3-8" class="tab">
+                <p class="tt">思路</p>
+                <p>
+                    这里也是用到两个指针。如果一个链表中有环，也就是说用一个指针去遍历，是永远走不到头的。因此，我们可以用两个指针去遍历，一个指针一次走两步，一个指针一次走一步，如果有环，两个指针肯定会在环中相遇。时间复杂度为O（n）</p>
+                <pre class="java">
+	/**
+	 * 判断一个单链表中是否有环
+	 * 这里也是用到两个指针。如果一个链表中有环，也就是说用一个指针去遍历，是永远走不到头的。因此，我们可以用两个指针去遍历，一个指针一次走两步
+	 * ，一个指针一次走一步，如果有环，两个指针肯定会在环中相遇。时间复杂度为O（n）
+	 *
+	 * @param head
+	 * @return
+	 */
+	public boolean HasCycle(Node head) {
+		Node p1 = head;
+		Node p2 = head;
+		while (p1.m_next != null) {
+			p1 = p1.m_next;
+			p2 = p2.m_next;
+			if (p1.m_next != null) {
+				p1 = p1.m_next;
+			}
+			if (p1 == p2) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+
+                </pre>
+
+            </div>
+            <div id="tab3-9" class="tab">
+                <p class="tt">思路</p>
+                <p> 如果两个链表相交于某一节点，那么在这个相交节点之后的所有节点都是两个链表所共有的。 也就是说，如果两个链表相交，那么最后一个节点肯定是共有的先遍历第一个链表，记住最后一个节点，然后遍历第二个链表，
+                    到最后一个节点时和第一个链表的最后一个节点做比较，如果相同，则相交，否则不相交。时间复杂度为O(len1+len2)，因为只需要一个额外指针保存最后一个节点地址， 空间复杂度为O(1)</p>
+                <pre class="java">
+	/**
+	 * 判断两个单链表是否相交
+	 *
+	 * 如果两个链表相交于某一节点，那么在这个相交节点之后的所有节点都是两个链表所共有的。 也就是说，如果两个链表相交，那么最后一个节点肯定是共有的
+	 * 先遍历第一个链表，记住最后一个节点，然后遍历第二个链表， 到最后一个节点时和第一个链表的最后一个节点做比较，如果相同，则相交，
+	 * 否则不相交。时间复杂度为O(len1+len2)，因为只需要一个额外指针保存最后一个节点地址， 空间复杂度为O(1)
+	 *
+	 * @param head1
+	 * @param head2
+	 * @return
+	 */
+	public boolean IsIntersect(Node head1, Node head2) {
+		if (head1 == null || head2 == null)
+			return false;
+		Node finalNode = head1;
+		while (finalNode.m_next != null) {
+			finalNode = finalNode.m_next;
+		}
+		Node finalNode2 = head2;
+		while (finalNode2.m_next != null) {
+			finalNode2 = finalNode2.m_next;
+		}
+		return finalNode == finalNode2;
+	}
+
+
+                </pre>
+
+            </div>
+            <div id="tab3-10" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 求两个单链表相交的第一个节点
+	 *
+	 * 对第一个链表遍历，计算长度len1，同时保存最后一个节点的地址。
+	 * 对第二个链表遍历，计算长度len2，同时检查最后一个节点是否和第一个链表的最后一个节点相同，若不相同，不相交，结束。
+	 *
+	 * 两个链表均从头节点开始，假设len1大于len2,
+	 * 那么将第一个链表先遍历len1-len2个节点，此时两个链表当前节点到第一个相交节点的距离就相等了，然后一起向后遍历，直到两个节点的地址相同。
+	 * 时间复杂度，O(len1+len2)
+	 *
+	 * @param head1
+	 * @param head2
+	 * @return
+	 */
+	public Node GetFirstCommonNode(Node head1, Node head2) {
+		if (head1 == null || head2 == null)
+			return null;
+		Node finalNode = head1;
+		int head1_len = 1;
+		while (finalNode.m_next != null) {
+			finalNode = finalNode.m_next;
+			head1_len++;
+		}
+		Node finalNode2 = head2;
+		int head2_len = 1;
+		while (finalNode2.m_next != null) {
+			finalNode2 = finalNode2.m_next;
+			head2_len++;
+		}
+		if (finalNode != finalNode2) {
+			return null;
+		}
+		Node curNode1 = head1;
+		Node curNode2 = head2;
+		if (head1_len > head2_len) {
+			int len = head1_len - head2_len;
+			while (len != 0) {
+				curNode1 = curNode1.m_next;
+				len--;
+			}
+		} else {
+			int len = head2_len - head1_len;
+			while (len != 0) {
+				curNode2 = curNode2.m_next;
+				len--;
+			}
+		}
+		while (curNode1 != curNode2) {
+			curNode1 = curNode1.m_next;
+			curNode2 = curNode2.m_next;
+		}
+		return curNode1;
+
+	}
+
+
+
+                </pre>
+
+            </div>
+            <div id="tab3-11" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 求进入环中的第一个节点 用快慢指针做
+	 *
+	 * @param head
+	 * @return
+	 */
+	public Node GetFirstNodeInCycle(Node head) {
+		Node fast = head;
+		Node slow = head;
+		// 1） 找到快慢指针相遇点
+		while (fast != null && fast.m_next != null) {
+			fast = fast.m_next.m_next;
+			slow = slow.m_next;
+		}
+		// 判断有没有环
+		if (fast == null || slow == null) {
+			return null;
+		}
+		// 2）现在，相遇点离环的开始处的距离等于链表头到环开始处的距离，
+		// 这样，我们把慢指针放在链表头，快指针保持在相遇点，然后
+		// 同速度前进，再次相遇点就是环的开始处！
+		slow = head;
+		while (slow != fast) {
+			slow = slow.m_next;
+			fast = fast.m_next;
+		}
+		// 再次相遇点就是环的开始处
+		return fast;
+
+	}
+                </pre>
+
+            </div>
+            <div id="tab3-12" class="tab">
+                <p class="tt">思路</p>
+                <p>见注释</p>
+                <pre class="java">
+	/**
+	 * 给出一单链表头指针head和一节点指针toBeDeleted，O(1)时间复杂度删除节点tBeDeleted
+	 *
+	 * 对于删除节点，我们普通的思路就是让该节点的前一个节点指向该节点的下一个节点
+	 * ，这种情况需要遍历找到该节点的前一个节点，时间复杂度为O(n)。对于链表，
+	 * 链表中的每个节点结构都是一样的，所以我们可以把该节点的下一个节点的数据复制到该节点
+	 * ，然后删除下一个节点即可。要注意最后一个节点的情况，这个时候只能用常见的方法来操作，先找到前一个节点，但总体的平均时间复杂度还是O(1)
+	 *
+	 * @param head
+	 * @param toDelete
+	 */
+	public void Delete(Node head, Node toDelete) {
+		if (toDelete == null) {
+			return;
+		}
+		if (toDelete.m_next != null) { // 要删除的是一个中间节点
+			toDelete.m_value = toDelete.m_next.m_value; // 将下一个节点的数据复制到本节点!
+			toDelete.m_next = toDelete.m_next.m_next;
+		} else { // 要删除的是最后一个节点！
+			if (head == toDelete) { // 链表中只有一个节点的情况
+				head = null;
+			} else {//要删除尾结点
+				Node node = head;
+				while (node.m_next != toDelete) { // 找到倒数第二个节点
+					node = node.m_next;
+				}
+				node.m_next = null;
+			}
+		}
+	}
+                </pre>
+
+            </div>
+        </div>
+
+        <div class="menu4 menu_tab">
+            <div id="tab4-1" class="tab active">
+                <p class="tt">
+                    面试官你好,我是瞿龙俊,来自江苏常州,是江苏大学2017届的硕士研究生,专业是计算机技术,一年左右的前端实习经验,目前我在上海意派科技有限公司担任前端研发工程师职位,
+                    实习期间为公司开发了一款在线的文档编辑器,我主要负责前端底层结构框架的开发,实现文本编辑和组件管理功能.除此之外,我还为公司开发了一套可视化
+                    数据库的前后端通信SDK.工作之余自己也会写一些JS的插件练手,现在应聘贵公司前端开发岗,希望能得到这个宝贵的机会,谢谢!
+                </p>
+            </div>
+            <div id="tab4-2" class="tab">
+                <p class="tt">项目介绍</p>
+                <p>
+                    图文消息编辑器是我进该公司接触的第一个完整项目,
+                </p>
+            </div>
+            <div id="tab4-3" class="tab">
+                <p class="tt">项目介绍</p>
+                <p>
+                    图文消息编辑器是我进该公司接触的第一个完整项目,
+                </p>
+            </div>
+        </div>
+
+        <div class="menu5 menu_tab">
+            <div id="tab5-1" class="tab">
+                <p class="tt">解决跨域问题</p>
+                <ul>
+                    <li>JSONP:原理是：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的json数据作为参数传入。
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="menu6 menu_tab">
+            <div id="tab6-1" class="tab">
+                <p class="tt">Position问题:</p>
+                <div>
+                    <ul>
+                        <li><p><code>absolute</code> :生成绝对定位的元素， 相对于最近一级的 定位不是 static 的父元素来进行定位。</p></li>
+                        <li><p><code>fixed</code> （老IE不支持）生成绝对定位的元素，通常相对于浏览器窗口或 frame 进行定位。</p></li>
+                        <li><p><code>relative</code> 生成相对定位的元素，相对于其在普通流中的位置进行定位。</p></li>
+                        <li><p><code>static</code> 默认值。没有定位，元素出现在正常的流中</p></li>
+                        <li><p><code>sticky</code> 生成粘性定位的元素，容器的位置根据正常文档流计算得出</p></li>
+                    </ul>
+                </div>
+                <div>absolute和fix会脱离文档流,static和relative不会脱离文档流.</div>
+                <div class="pading-2">float会脱离文档流,但下一个dom内部的文字会发现这个float,并将文字挤出float的dom的外部</div>
+
+                <div style="border:1px solid red;">
+                    <div style="float:left; width:100px;height:100px;border:1px solid green;">
+
+                    </div>
+                    <p style="background: red;">
+                        这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例</p>
+                </div>
+
+                <div class="pading-2">
+                    Position设置为static或者relative时,不会脱离文档里,和普通布局一样,但设置为fix或者absolute的时候,会脱离文档里,且下一个dom里的文字也会无视这个dom
+                </div>
+
+                <div style="border:1px solid red;">
+                    <div style="position:absolute; width:100px;height:100px;border:1px solid green;">
+
+                    </div>
+                    <p style="background: red;">
+                        这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例这是一段测试文本文字的用例</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.snippet.js"></script>
+<script type="text/javascript" src="js/pc.js"></script>
+<script type="text/javascript" src="ts.js"></script>
+</html>
