@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fc1d1df3-e8dc-484b-a0db-073bdb8a40aa" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/code-block-dialog/code-block-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/emoji-dialog/emoji-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/emoji-dialog/emoji.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/goto-line-dialog/goto-line-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/help-dialog/help-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/help-dialog/help.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/html-entities-dialog/html-entities-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/html-entities-dialog/html-entities.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/image-dialog/image-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/link-dialog/link-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/plugin-template.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/preformatted-text-dialog/preformatted-text-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/reference-link-dialog/reference-link-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/table-dialog/table-dialog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/editor/plugins/test-plugin/test-plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/app.css" afterPath="$PROJECT_DIR$/assets/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/json/leftPanel.json" afterPath="$PROJECT_DIR$/assets/json/leftPanel.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index4.html" afterPath="$PROJECT_DIR$/index4.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index3.html" afterPath="$PROJECT_DIR$/index3.html" />
     </list>
     <ignored path="SearchAlgorithm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,20 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index3.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index3.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="748">
+              <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="860">
+            <state relative-caret-position="1326">
               <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
               <folding />
             </state>
@@ -165,11 +146,11 @@
         <option value="$PROJECT_DIR$/assets/template/leftPanel.tpl" />
         <option value="$PROJECT_DIR$/assets/js/config.js" />
         <option value="$PROJECT_DIR$/assets/js/custom.js" />
-        <option value="$PROJECT_DIR$/index3.html" />
         <option value="$PROJECT_DIR$/index4.html" />
         <option value="$PROJECT_DIR$/assets/json/leftPanel.json" />
         <option value="$PROJECT_DIR$/assets/editor/css/custom.css" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
+        <option value="$PROJECT_DIR$/index3.html" />
       </list>
     </option>
   </component>
@@ -354,12 +335,12 @@
       <workItem from="1473048957562" duration="5743000" />
       <workItem from="1473309669466" duration="21000" />
       <workItem from="1473436603158" duration="3104000" />
-      <workItem from="1473504031468" duration="20890000" />
+      <workItem from="1473504031468" duration="21233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59772000" />
+    <option name="totallyTimeSpent" value="60115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -753,18 +734,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index3.html">
+    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+        <state relative-caret-position="1326">
+          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.css">
+    <entry file="file://$PROJECT_DIR$/index3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="78" column="15" selection-start-line="78" selection-start-column="15" selection-end-line="78" selection-end-column="15" />
+        <state relative-caret-position="748">
+          <caret line="45" column="81" selection-start-line="45" selection-start-column="81" selection-end-line="45" selection-end-column="81" />
           <folding />
         </state>
       </provider>
